@@ -165,9 +165,9 @@ export default function About({ pageData }: { pageData: Aim2026page }) {
                   </div>
 
                   <div>
-                    <div className="px-4 py-2 bg-primary rounded-pill text-white">
-                      {pageData.aimtalkctaname.value}
-                    </div>
+                    <Link href={pageData.aimchapterctalink.value || '#'} className="px-4 py-2 bg-primary rounded-pill text-white">
+                      {pageData.aimchapterctaname.value}
+                    </Link>
                   </div>
                 </div>
 
