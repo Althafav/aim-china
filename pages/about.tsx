@@ -107,11 +107,6 @@ export default function About({ pageData }: { pageData: Aim2026page }) {
                 className="p-lg-5 p-3 d-flex flex-column gap-4 rounded-3xl"
                 style={{ backgroundColor: "#F1F5F9" }}
               >
-                <img
-                  className="rounded-3xl w-100 h-100"
-                  src={pageData.aimtalkimage.value[0]?.url}
-                  alt={pageData.aimtalkheading.value}
-                />
                 <div className="d-flex flex-wrap gap-3 justify-content-between">
                   <div>
                     <h4 className="text-primary mb-2">
@@ -131,6 +126,12 @@ export default function About({ pageData }: { pageData: Aim2026page }) {
                     </div>
                   </div>
                 </div>
+                <img
+                  style={{ height: "300px" }}
+                  className="rounded-3xl w-100 h-100"
+                  src={pageData.aimtalkimage.value[0]?.url}
+                  alt={pageData.aimtalkheading.value}
+                />
 
                 <div
                   className="content-wrapper"
@@ -145,12 +146,6 @@ export default function About({ pageData }: { pageData: Aim2026page }) {
                 className="p-lg-5 p-3 d-flex flex-column gap-4 rounded-3xl"
                 style={{ backgroundColor: "#F1F5F9" }}
               >
-                <img
-                  style={{ height: "300px" }}
-                  className="rounded-3xl w-100"
-                  src={pageData.aimchapterimage.value[0]?.url}
-                  alt={pageData.aimchapterheading.value}
-                />
                 <div className="d-flex flex-wrap gap-3 justify-content-between">
                   <div>
                     <h4 className="text-primary mb-2">
@@ -165,11 +160,20 @@ export default function About({ pageData }: { pageData: Aim2026page }) {
                   </div>
 
                   <div>
-                    <Link href={pageData.aimchapterctalink.value || '#'} className="px-4 py-2 bg-primary rounded-pill text-white">
+                    <Link
+                      href={pageData.aimchapterctalink.value || "#"}
+                      className="px-4 py-2 bg-primary rounded-pill text-white"
+                    >
                       {pageData.aimchapterctaname.value}
                     </Link>
                   </div>
                 </div>
+                <img
+                  style={{ height: "300px" }}
+                  className="rounded-3xl w-100"
+                  src={pageData.aimchapterimage.value[0]?.url}
+                  alt={pageData.aimchapterheading.value}
+                />
 
                 <div
                   className="content-wrapper"
@@ -401,7 +405,9 @@ export default function About({ pageData }: { pageData: Aim2026page }) {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h2 className="mb-4 text-white section-heading fw-bold">{pageData.whyglobalhubheading.value}</h2>
+              <h2 className="mb-4 text-white section-heading fw-bold">
+                {pageData.whyglobalhubheading.value}
+              </h2>
             </div>
           </div>
 

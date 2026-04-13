@@ -119,7 +119,7 @@ export default function HomeSpeakersComponentCurrent() {
               className="section-heading-2026 text-black text-start mb-0"
               style={{ maxWidth: "800px" }}
             >
-              {locale === "cn" ? "高级演讲者" : "High Level Speakers"}
+              {locale === "cn" ? "高级演讲者" : "AIM Congress - China Chapter 2025 High Level Speakers "}
             </h2>
             <ButtonComponent name="View all Speakers" link="/speakers-2025" />
           </div>
@@ -153,7 +153,7 @@ export default function HomeSpeakersComponentCurrent() {
               className="section-heading-2026 text-black text-start mb-0"
               style={{ maxWidth: "800px" }}
             >
-              {locale === "cn" ? "扬声器" : "Speakers"}
+              {locale === "cn" ? "扬声器" : "AIM Congress - China Chapter 2025 Speakers "}
             </h2>
             <ButtonComponent name="View all Speakers" link="/speakers-2025" />
           </div>
