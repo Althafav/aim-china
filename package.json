@@ -1,0 +1,53 @@
+{
+  "name": "aim-v2",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@kentico/kontent-delivery": "^10.4.1",
+    "@vercel/speed-insights": "^1.0.12",
+    "axios": "^1.7.7",
+    "canvas-confetti": "^1.9.3",
+    "embla-carousel-react": "^8.1.6",
+    "express": "^4.19.2",
+    "file-saver": "^2.0.5",
+    "framer-motion": "^11.3.6",
+    "fs": "^0.0.1-security",
+    "gsap": "^3.13.0",
+    "html-to-image": "^1.11.11",
+    "html2canvas": "^1.4.1",
+    "jquery": "^3.7.1",
+    "jspdf": "^3.0.1",
+    "next": "^14.2.35",
+    "next-sitemap": "^4.2.3",
+    "nprogress": "^0.2.0",
+    "react": "^18.3.1",
+    "react-countup": "^6.5.3",
+    "react-dom": "^18.3.1",
+    "react-fast-marquee": "^1.6.5",
+    "react-icons": "^5.2.1",
+    "react-intersection-observer": "^9.13.0",
+    "react-select": "^5.8.0",
+    "swiper": "^11.2.10",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^15.4.2",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/file-saver": "^2.0.7",
+    "@types/jquery": "^3.5.32",
+    "@types/node": "^20",
+    "@types/nprogress": "^0.2.3",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "typescript": "^5"
+  }
+}

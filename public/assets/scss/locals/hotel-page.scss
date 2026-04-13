@@ -1,0 +1,41 @@
+.hotels-page-wrapper {
+    .hotel-items {
+        border-bottom: 1px solid rgb(230, 229, 229);
+        padding-bottom: 60px;
+
+        .name {
+            color: black;
+        }
+
+        .img-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-shadow: -5px 7px 16px -10px rgba(0, 0, 0, 0.23);
+            -webkit-box-shadow: -5px 7px 16px -10px rgba(0, 0, 0, 0.23);
+            -moz-box-shadow: -5px 7px 16px -10px rgba(0, 0, 0, 0.23);
+        }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .content {
+
+            a {
+                color: $primary-color;
+                text-decoration: underline;
+            }
+        }
+
+        .cta-btn {
+            padding: 8px 16px;
+            border-radius: 30px;
+            background: $primary-color;
+        color: white;
+        }
+    }
+}

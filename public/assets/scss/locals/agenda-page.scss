@@ -1,0 +1,387 @@
+.portfolio-agenda-wrapper .agenda-banner-wrapper {
+  position: relative;
+  height: 45vh;
+  background: #000;
+}
+
+.portfolio-agenda-wrapper .agenda-banner-wrapper .banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  height: 45vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.portfolio-agenda-wrapper .agenda-banner-wrapper .text-container {
+  position: absolute;
+  z-index: 2;
+  bottom: 0px;
+  left: 50%;
+  max-width: 1000px;
+  transform: translate(-50%, -50%);
+}
+
+.portfolio-agenda-wrapper
+  .agenda-banner-wrapper
+  .text-container
+  .banner-heading {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  max-width: 1000px;
+  font-size: 72px;
+  letter-spacing: -3px;
+}
+
+@media screen and (max-width: 800px) {
+  .portfolio-agenda-wrapper
+    .agenda-banner-wrapper
+    .text-container
+    .banner-heading {
+    font-size: 42px;
+    margin-bottom: 20px;
+    letter-spacing: 0px;
+  }
+}
+
+.portfolio-agenda-wrapper
+  .agenda-banner-wrapper
+  .text-container
+  .banner-heading-2 {
+  color: #fff;
+  font-weight: 300;
+  position: relative;
+  max-width: 800px;
+  font-size: 28px;
+  letter-spacing: -2px;
+}
+
+@media screen and (max-width: 800px) {
+  .portfolio-agenda-wrapper
+    .agenda-banner-wrapper
+    .text-container
+    .banner-heading-2 {
+    font-size: 20px;
+    letter-spacing: 0px;
+  }
+}
+
+.portfolio-agenda-wrapper
+  .agenda-banner-wrapper
+  .text-container
+  .agenda-select {
+  width: 100%;
+  max-width: 300px;
+  padding-right: 2rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  appearance: none;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  position: relative;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.portfolio-agenda-wrapper .agenda-banner-wrapper .text-container select {
+  background-image: url("/assets/icons/arrow-down-icon.svg");
+  background-size: 20px 20px;
+}
+
+.portfolio-agenda-wrapper
+  .agenda-banner-wrapper
+  .text-container
+  .agenda-select
+  option {
+  background-color: #333;
+  color: #fff;
+}
+
+.portfolio-agenda-wrapper
+  .agenda-banner-wrapper
+  .text-container
+  .agenda-select:focus {
+  outline: none;
+  box-shadow: 0 0 5px hsla(0, 0%, 100%, 0.5);
+}
+
+@media (max-width: 768px) {
+  .portfolio-agenda-wrapper
+    .agenda-banner-wrapper
+    .text-container
+    .agenda-select {
+    max-width: 100%;
+  }
+}
+
+.portfolio-agenda-wrapper .search-form-wrapper {
+  width: 382px;
+  background-color: #3f3f3f;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  padding: 0 20px;
+}
+
+.portfolio-agenda-wrapper .search-form-wrapper .search-form {
+  background-color: #3f3f3f;
+  width: 100%;
+  height: 42px;
+  border-radius: 50px;
+  border: none;
+  color: #fff;
+}
+
+.portfolio-agenda-wrapper .search-form-wrapper .form-control {
+  min-height: unset;
+}
+
+.portfolio-agenda-wrapper .agenda-heading {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.portfolio-agenda-wrapper .agenda-heading .agenda-filter-wrapper {
+  position: absolute;
+  right: 0;
+}
+
+.portfolio-agenda-wrapper .agenda-heading .hidden {
+  display: none;
+}
+
+.portfolio-agenda-wrapper .section-heading {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio-agenda-wrapper .section-heading {
+    text-align: start;
+  }
+}
+
+.portfolio-agenda-wrapper .date-items {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.portfolio-agenda-wrapper .date-items::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-agenda-wrapper .date-items .date-item {
+  padding: 8px 16px;
+  color: #fff;
+  background-color: #3f3f3f;
+  border-radius: 50px;
+  cursor: pointer;
+  flex: 0 0 auto;
+  min-width: 100px;
+  text-align: center;
+}
+
+.portfolio-agenda-wrapper .date-items .date-item.active {
+  background-color: #099ffc;
+}
+
+@media (max-width: 600px) {
+  .portfolio-agenda-wrapper .date-items {
+    justify-content: start;
+    padding: 0 10px;
+  }
+
+  .portfolio-agenda-wrapper .date-item {
+    min-width: 80px;
+  }
+}
+
+.portfolio-agenda-wrapper .portfolio-agenda-content-wrapper .session-item-card {
+  width: 100%;
+  margin: auto;
+  background: linear-gradient(to right, #3f3f3f, rgba(0, 0, 0, 0.9));
+  padding: 20px;
+  position: relative;
+}
+
+.portfolio-agenda-wrapper
+  .portfolio-agenda-content-wrapper
+  .session-item-card
+  img {
+  background-color: #fff;
+}
+
+.portfolio-agenda-wrapper
+  .portfolio-agenda-content-wrapper
+  .session-item-card
+  .portfolio-logo {
+  width: 40px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.portfolio-agenda-wrapper
+  .portfolio-agenda-content-wrapper
+  .session-item-card
+  .portfolio-name {
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.portfolio-agenda-wrapper
+  .portfolio-agenda-content-wrapper
+  .session-item-card
+  .name {
+  font-size: 28px;
+  font-weight: normal;
+  max-width: 1000px;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 800px) {
+  .portfolio-agenda-wrapper
+    .portfolio-agenda-content-wrapper
+    .session-item-card
+    .name {
+    font-size: 20px;
+  }
+}
+
+.portfolio-agenda-wrapper
+  .portfolio-agenda-content-wrapper
+  .session-item-card
+  .time {
+  color: #d1d1d1;
+  font-size: 13px;
+}
+
+.portfolio-agenda-wrapper
+  .portfolio-agenda-content-wrapper
+  .session-item-card
+  .location {
+  color: #d1d1d1;
+  font-size: 15px;
+}
+
+.portfolio-agenda-wrapper
+  .portfolio-agenda-content-wrapper
+  .session-item-card
+  .view-btn {
+  background: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 2px dotted;
+}
+
+@media screen and (max-width: 800px) {
+  .portfolio-agenda-wrapper
+    .portfolio-agenda-content-wrapper
+    .session-item-card
+    .view-btn {
+    font-size: 14px;
+  }
+}
+
+.portfolio-agenda-wrapper
+  .portfolio-agenda-content-wrapper
+  .session-item-card
+  .speakers-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.portfolio-agenda-wrapper
+  .portfolio-agenda-content-wrapper
+  .session-item-card
+  .speakers-wrapper
+  .speaker-card
+  .speaker-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  background: #fff;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+}
+
+.portfolio-agenda-wrapper
+  .portfolio-agenda-content-wrapper
+  .session-item-card
+  .speakers-wrapper
+  .speaker-card
+  .speaker-name {
+  font-size: 12px;
+  color: #fff;
+  max-width: 160px;
+}
+
+.portfolio-session-detail-page .session-head-wrapper {
+  background-color: #099ffc;
+  padding: 40px 0;
+}
+
+.portfolio-session-detail-page .session-head-wrapper .description {
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+  color: #fff;
+}
+
+.portfolio-session-detail-page .session-head-wrapper .time {
+  color: #fff;
+  font-size: 15px;
+}
+
+.portfolio-session-detail-page .session-head-wrapper .room {
+  color: #fff;
+}
+
+.portfolio-session-detail-page .speakers-wrapper .speaker-card .speaker-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio-session-detail-page
+    .speakers-wrapper
+    .speaker-card
+    .speaker-image {
+    height: 470px;
+  }
+}
+
+.portfolio-session-detail-page .speakers-wrapper .speaker-card .speaker-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.portfolio-session-detail-page
+  .speakers-wrapper
+  .speaker-card
+  .speaker-designation {
+  color: #818181;
+  font-weight: 14px;
+}
+
+.portfolio-session-detail-page .speakers-wrapper .speaker-card .description {
+  color: #818181;
+  max-width: 800px;
+  text-align: left;
+}

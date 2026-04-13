@@ -1,0 +1,42 @@
+.banner2026-component {
+  width: 100%;
+  overflow: hidden;
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; // text at top
+  }
+
+  @media (max-width: 767.98px) {
+    h1.display-4 {
+      font-size: 1.75rem;
+    }
+    p.lead {
+      font-size: 1rem;
+    }
+  }
+}
+
+.headerbanner-component-wrapper {
+  position: relative;
+  background: linear-gradient(280deg, #d9edf1 3%, #ffffff 42%, #dcf2ff 97%);
+  height: 300px;
+
+  background-image: url("/assets/pattern/aim-pattern-left.svg"),
+    url("/assets/pattern/aim-pattern-right.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: left center, right top;
+  background-size: 480px 360px, 680px 360px;
+
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    background-image: url("/assets/pattern/aim-pattern-left.svg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 360px auto;
+  }
+}

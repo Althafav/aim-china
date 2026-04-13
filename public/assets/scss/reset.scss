@@ -1,0 +1,109 @@
+.df-btn {
+  z-index: 10 !important;
+}
+
+.container {
+  width: 100% !important;
+  max-width: 1500px !important; // fallback
+
+  // Bootstrap default breakpoints (widen if you want)
+  @media (min-width: 576px) {
+    max-width: 540px !important;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px !important;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px !important;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px !important;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1320px !important;
+  }
+  // Custom wider breakpoints for big screens
+  @media (min-width: 1600px) {
+    max-width: 1500px !important;
+  }
+ 
+}
+
+.blog-banner-wrapper {
+  padding: 40px;
+  border-radius: 30px;
+  background: black;
+
+  @media screen and (max-width: 400px) {
+    padding: 20px;
+  }
+  .heading {
+    font-size: 32px;
+    color: white;
+  }
+
+  .description {
+    color: white;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .share-icon {
+    background-color: #353535;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .youtube-icon {
+    background-color: #353535;
+    padding: 8px;
+    border-radius: 50%;
+  }
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    background-color: #2e2e2e; // Dark gray background
+    border-radius: 30px; // Fully rounded
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 400px; // Adjust width as needed
+
+    input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 1rem;
+      width: 100%;
+
+      &::placeholder {
+        color: #aaa;
+      }
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      color: #aaa;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+

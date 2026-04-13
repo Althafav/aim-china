@@ -1,0 +1,121 @@
+.portfolio-section-wrapper {
+
+    .main-head {
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+        color: black;
+        
+        text-transform: capitalize;
+        line-height: 1.1;
+        display: flex;
+        flex-direction: column;
+        color: $primary-color-varient;
+        letter-spacing: -1px;
+
+        @media screen and (max-width: 800px) {
+            font-size: 32px;
+
+        }
+    }
+
+    .sub-head {
+        font-size: 24px;
+        color: $light-text;
+        letter-spacing: -2px;
+
+        @media screen and (max-width: 800px) {
+            font-size: 20px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+    }
+
+
+
+    .cta-card-item {
+        width: 100%;
+        border-radius: 30px;
+        max-width: 375px;
+        
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        position: relative;
+        transition: all 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+            height: 450px;
+        }
+
+        .text-container {
+            position: absolute;
+            width: 100%;
+            padding: 20px;
+            z-index: 1;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            // background: linear-gradient(to bottom, $primary-color, $primary-color-varient);
+            height: 100%;
+
+            .main-head--card {
+                color: white;
+                font-size: 32px;
+                max-width: 175px;
+                line-height: 1.1;
+                font-weight: bold;
+                letter-spacing: -1px;
+                text-align: start;
+                text-transform: capitalize;
+
+                @media screen and (max-width: 800px) {
+                    font-size: 20px;
+                
+                }
+
+            }
+
+            .sub-head--card {
+                font-size: 16px;
+                color: white;
+                font-weight: normal;
+            }
+
+            .know-more-btn {
+                color: white;
+                border-radius: 20px;
+                font-size: 16px;
+                padding: 8px 16px;
+
+
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                @media screen and (max-width: 800px) {
+                    font-size: 12px;
+                    padding: 8px;
+
+                    svg {
+                        width: 14px;
+                    }
+                }
+            }
+
+
+
+        }
+    }
+
+}

@@ -1,0 +1,229 @@
+.page-not-found-wrapper {
+  .error-code {
+    font-size: 128px;
+    font-weight: 900;
+    color: black;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 68px;
+    }
+  }
+
+  .cta-btn {
+    color: white;
+  }
+
+  .animated-container {
+    margin: 40px 0;
+    position: relative;
+    .circle {
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      mix-blend-mode: multiply;
+      animation: movement 4s infinite linear;
+    }
+    .green {
+      background-color: black;
+    }
+
+    .violet {
+      background-color: $primary-color;
+      animation-delay: -2s;
+    }
+
+    @keyframes movement {
+      0% {
+        transform: translateX(50px);
+        scale: 100%;
+      }
+
+      25% {
+        scale: 150%;
+      }
+
+      50% {
+        transform: translateX(-50px);
+        scale: 100%;
+      }
+
+      75% {
+        scale: 90%;
+      }
+
+      100% {
+        transform: translateX(50px);
+        scale: 100%;
+      }
+    }
+  }
+
+  .pd-5vw {
+    padding: 5vw;
+  }
+
+  .dpd-20 {
+    padding-bottom: 20px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-purple {
+    color: #6435c9;
+  }
+
+  .text-grey {
+    color: #5f7f89;
+  }
+
+  .text-blue {
+    color: #4fc1ea;
+  }
+
+  .text-size-20-vh {
+    font-size: 20vh;
+    line-height: normal;
+  }
+
+  .text-size-10-vh {
+    font-size: 10vh;
+  }
+
+  
+
+  .text-size-5-vh {
+    font-size: 5vh;
+  }
+
+  .text-size-18 {
+    font-size: 18px;
+  }
+
+  .text-height-1-5 {
+    line-height: 1.5;
+  }
+
+  .bg-500 {
+    height: 100%;
+    position: relative;
+    background: #eee;
+    background: -moz-linear-gradient(
+      top,
+      rgba(232, 247, 252, 1) 0%,
+      rgba(249, 249, 249, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      top,
+      rgba(232, 247, 252, 1) 0%,
+      rgba(249, 249, 249, 1) 100%
+    );
+    background: linear-gradient(
+      to bottom,
+      rgba(232, 247, 252, 1) 0%,
+      rgba(249, 249, 249, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8f7fc', endColorstr='#f9f9f9',GradientType=0);
+  }
+
+  .bottom-copy {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 140px;
+    text-align: center;
+  }
+
+  .gears-grd1 {
+    stop-color: #4fc1ea;
+    stop-opacity: 1;
+  }
+
+  .gears-grd2 {
+    stop-color: $primary-color;
+    stop-opacity: 1;
+  }
+
+  .gears-img {
+    position: absolute;
+    text-align: right;
+    right: 10vw;
+    bottom: 10vh;
+    width: 40%;
+  }
+
+  .gears-img img {
+    max-width: 100%;
+  }
+
+  .machine {
+    width: 40vmin;
+  }
+
+  .small-shadow,
+  .medium-shadow,
+  .large-shadow {
+    fill: rgba(0, 0, 0, 0.05);
+  }
+
+  .small {
+    animation: counter-rotation 2.5s infinite linear;
+    transform-origin: 100.136px 225.345px;
+  }
+
+  .small-shadow {
+    animation: counter-rotation 2.5s infinite linear;
+    transform-origin: 110.136px 235.345px;
+  }
+
+  .medium {
+    animation: rotation 3.75s infinite linear;
+    transform-origin: 254.675px 379.447px;
+  }
+
+  .medium-shadow {
+    animation: rotation 3.75s infinite linear;
+    transform-origin: 264.675px 389.447px;
+  }
+
+  .large {
+    animation: counter-rotation 5s infinite linear;
+    transform-origin: 461.37px 173.694px;
+  }
+
+  .large-shadow {
+    animation: counter-rotation 5s infinite linear;
+    transform-origin: 471.37px 183.694px;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  @keyframes counter-rotation {
+    from {
+      transform: rotate(359deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .sm-hide {
+      display: none;
+    }
+
+    .text-size-10-vh {
+      font-size: 6vh;
+    }
+  }
+}

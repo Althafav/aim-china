@@ -1,0 +1,19 @@
+.SingleSwiper {
+
+
+
+  .swiper-slide {
+
+
+    transition: opacity 0.2s ease-in;
+    opacity: 0.2;
+  }
+
+
+
+  .swiper-slide-active {
+    transition: opacity 0.2s ease-in;
+    opacity: 1;
+  }
+}
+

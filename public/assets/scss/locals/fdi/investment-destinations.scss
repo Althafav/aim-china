@@ -1,0 +1,138 @@
+.investment-destination-page {
+    .map-section-wrapper {
+
+        position: relative;
+
+        .map-image {
+            width: 100%;
+            object-fit: contain;
+            max-width: 1300px;
+            height: auto;
+        }
+
+        .map-heading {
+            font-size: clamp(24px, 5vw, 75px); // Adjusts between 24px and 75px based on viewport width
+            line-height: 1.5;
+            text-transform: uppercase;
+            letter-spacing: clamp(5px, 2vw, 20px); // Scales letter spacing
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            max-width: 1041px;
+            text-align: center;
+            font-weight: 400;
+
+            @media screen and (max-width: 400px) {
+                font-size: 20px;
+                letter-spacing: 2px; // Tightens letter-spacing on very small screens
+            }
+        }
+
+    }
+
+    .about-investment-destination {
+        .banner-wrap {
+            position: relative;
+
+            .heading {
+                position: absolute;
+                font-size: 64px;
+                max-width: 400px;
+                color: white;
+                line-height: 1.1;
+                top: 50%;
+                left: 20px;
+                transform: translate(0, -50%);
+                text-transform: uppercase;
+
+                @media screen and (max-width: 1000px) {
+                    font-size: 24px;
+                }
+            }
+        }
+
+        .presentation-guidelines-contents {
+            color: #B4B4B4;
+
+
+
+            .guide-head {
+                font-weight: 600;
+                color: black;
+            }
+
+            .presentation-guidelines {
+                p {
+                    color: black;
+                    font-weight: 400;
+                }
+
+                li {
+                    margin-left: 40px;
+                    padding: 10px;
+                    list-style: disc;
+                }
+            }
+        }
+
+
+
+
+
+    }
+
+    .presentation-guidelines-cta-wrap {
+        .heading {
+            color: black;
+            font-size: 40px;
+
+            @media screen and (max-width: 600px) {
+                font-size: 20px;
+            }
+        }
+
+        .cta-btn {
+            padding: 8px 48px;
+        }
+    }
+
+
+    .destination-carousel-section--detail-page {
+        position: relative;
+
+        .heading-presentation-carousel {
+            font-size: 75px;
+            color: black;
+            text-transform: uppercase;
+
+            @media screen and (max-width: 1000px) {
+                font-size: 28px;
+            }
+        }
+
+        .investment-destination-card {
+            height: auto;
+
+            .investment-destination-image {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+    .bookspot-cta-wrap {
+        width: 100%;
+
+        height: 250px;
+
+        background: rgb(0, 0, 0);
+        background: linear-gradient(331deg, rgba(0, 0, 0, 1) 0%, rgba(81, 81, 81, 1) 64%);
+    }
+
+
+}

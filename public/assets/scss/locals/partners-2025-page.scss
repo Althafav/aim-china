@@ -1,0 +1,54 @@
+.partners-2025-page {
+
+    .partner-item {
+
+        height: 100%;
+        padding: 20px;
+        -webkit-box-shadow: 8px 8px 32px -30px rgba(66, 68, 90, 1);
+        -moz-box-shadow: 8px 8px 32px -30px rgba(66, 68, 90, 1);
+        box-shadow: 8px 8px 32px -30px rgba(66, 68, 90, 1);
+
+        img {
+            object-fit: contain;
+            padding-bottom: 20px;
+
+
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .fdi-partner {
+            color: $fdi-primary;
+        }
+
+        .global-trade-partner {
+            color: $global-trade-primary;
+        }
+
+        .future-finance-partner {
+            color: $future-finance;
+        }
+
+        .startup-partner {
+            color: $startup;
+        }
+
+        .partner-name {
+            color: $primary-color;
+        }
+    }
+
+
+}
+
+.partner-detail-page {
+    .description {
+        max-width: 1000px;
+    }
+
+    .content-wrapper {
+        
+    }
+}

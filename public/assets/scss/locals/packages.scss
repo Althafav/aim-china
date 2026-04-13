@@ -1,0 +1,86 @@
+.packagesPage-wrapper {
+
+    .packages {
+        max-width: 1450px;
+        margin: 80px auto;
+    }
+
+    .table-responsive {
+        max-height: 750px;
+        overflow-y: auto;
+
+        &:hover {
+          
+
+            cursor: all-scroll; // Change cursor to grab for better UX
+        }
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    scrollbar-width: none;
+
+    .table {
+
+        th {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background-color: white;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: start;
+            vertical-align: middle;
+        }
+
+        select.form-select {
+            width: 150px;
+            text-align: left;
+        }
+
+        .features-heading {
+            font-size: 38px;
+        }
+
+        .feature-item {
+            font-weight: 600;
+        }
+
+        .pass-head {
+            height: 128px;
+        }
+
+        .standard-pass-price-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            .label-portfolio-select {
+                font-size: 10px;
+            }
+        }
+
+        .package-name {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .aim-package-btn {
+            width: 120px;
+            padding: 10px;
+            font-size: 18px;
+        }
+    }
+
+
+
+
+}

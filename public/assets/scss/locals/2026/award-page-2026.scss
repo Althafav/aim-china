@@ -1,0 +1,124 @@
+.awards-page-wrapper-2026 {
+  .award-category-wrapper {
+    .award-slider-wrapper {
+      position: relative;
+      .custom-navigation-btns {
+        position: absolute;
+        bottom: 20px;
+        left: 40px;
+        z-index: 10;
+        display: flex;
+        gap: 5px;
+      }
+    }
+    .award-card {
+      height: 70vh;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, black, rgba(0, 0, 0, 0));
+      }
+      .award-item-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    .accordion {
+      .accordion-button {
+        background-color: $primary-color;
+        color: white;
+        padding: 20px;
+        border-radius: 0;
+      }
+    }
+  }
+
+  .juries-section-wrapper {
+    .right-arrow-icon {
+      width: 58px;
+    }
+
+    .heading {
+      color: #646464;
+    }
+
+    .jury-item {
+      cursor: pointer;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateY(-10px);
+
+        .name {
+          color: $fdi-primary;
+        }
+
+        .designation-wrapper {
+          opacity: 1;
+          transform: translateY(10px);
+        }
+      }
+
+      .image-wrapper {
+        position: relative;
+        border-radius: 30px;
+        overflow: hidden;
+
+        img {
+          border-radius: 30px;
+        }
+        .name-wrapper {
+          position: absolute;
+          z-index: 2;
+          bottom: 0;
+          width: 100%;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .name {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+          }
+
+          .company {
+            font-size: 12px;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+          }
+        }
+      }
+
+      .designation-wrapper {
+        opacity: 0;
+        padding: 0 20px;
+        width: 100%;
+        transform: translateY(10px);
+        transition: all 0.2s ease;
+
+        .designation {
+          text-align: center;
+          font-size: 16px;
+          text-transform: capitalize;
+          letter-spacing: -0.5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+.packagesPage-wrapper {
+   
+    .packages {
+        
+       
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        .package-card-wrapper {
+            display: flex;
+           
+            gap: 20px;
+            flex-wrap: nowrap;
+           
+
+          
+        }
+
+        .package-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            min-width: 380px;
+            
+            
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            .package-btn{
+                background: $primary-color;
+                color: white;
+                padding: 8px 12px;
+                border-radius: 30px;
+            }
+            .standard-pass-price-wrapper {
+                display: flex;
+                gap: 10px;
+            }
+            .package-name {
+                font-size: 24px;
+                font-weight: 600;
+                text-align: start;
+            }
+
+            .feature-name {
+                max-width: 200px;
+            }
+
+            .package-price {
+                font-size: 32px;
+                font-weight: bold;
+                margin: 10px 0;
+                text-align: start;
+            }
+
+            .form-select {
+                margin-bottom: 20px;
+                width: 150px;
+                color: #555555;
+                border: 1px solid #55555538;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .feature-list {
+                list-style: none;
+                padding: 0;
+
+                .feature-item {
+                    display: flex;
+                    align-items: center;
+                    text-align: start;
+                    justify-content: space-between;
+                    padding: 10px;
+                    font-size: 16px;
+                    border-top: 1px solid #eee;
+                    
+                    svg {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        .standard-card {
+            background-color: #F4F4F4;
+            color: #3A3A3A;
+            
+            .icon {
+                color: #555555;
+            }
+        }
+
+        .card-1 {
+            
+            background-color: #D2E7D1;
+            color: #4A5E56;
+
+            .icon {
+                color: #2F4A39 !important;
+            }
+        }
+
+        .card-2 {
+            background-color: #53401c;
+            color: #FFFFFF;
+
+            .icon {
+                color: #D4AF37 !important;
+            }
+        }
+
+
+    }
+}

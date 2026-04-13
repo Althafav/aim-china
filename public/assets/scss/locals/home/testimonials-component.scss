@@ -1,0 +1,138 @@
+.testimonails-component-wrapper {
+  .testimonial-card {
+    max-width: 375px;
+    height: 450px;
+
+    border-radius: 30px;
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+
+    .preview-items {
+      &:hover {
+        opacity: 0;
+      }
+    }
+
+    .testimonial-img1 {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      border-radius: 30px;
+      width: 140px;
+      object-fit: cover;
+
+      @media screen and (max-width: 1450px) {
+        width: 110px;
+      }
+    }
+
+    .video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 30px;
+      height: 450px;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+
+      -ms-object-fit: cover;
+      -webkit-object-fit: cover;
+
+      &:hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+        height: 450px;
+        overflow: hidden;
+        opacity: 1;
+      }
+
+      &::after {
+        pointer-events: auto;
+      }
+    }
+
+    .testimonial-words-main {
+      margin-top: 10px;
+      color: #fff;
+      font-size: 32px;
+      line-height: 0.9;
+      font-weight: bold;
+      letter-spacing: -2px;
+      text-align: start;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        color: white;
+        line-height: 1;
+      }
+
+      .name {
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      .company {
+        font-weight: normal;
+        font-size: 16px;
+      }
+    }
+
+    .mute-button {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 10;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+    }
+  }
+
+  .testimonial-card-2 {
+    background: $primary-color;
+
+    .testimonial-words-main {
+      color: black;
+    }
+    .quote-sub {
+      font-size: 14px;
+
+      overflow: hidden;
+
+      p {
+        font-size: 14px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .testimonial-card-wrapper {
+  }
+}
+
+.content-wrapper {
+  p {
+    font-size: 16px;
+  }
+}

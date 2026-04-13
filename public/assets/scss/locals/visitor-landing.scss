@@ -1,0 +1,231 @@
+.visitor-registration-wrapper {
+    .inner-banner-packages {
+        height: 30vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+
+        background-color: black;
+        background-attachment: fixed;
+
+        @media screen and (max-width: 600px) {
+            height: auto;
+            padding: 60px 0;
+        }
+
+        .banner-image {
+            height: 30vh;
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+
+        }
+
+        .title {
+            color: $primary-color;
+            font-size: 28px;
+
+            @media screen and (max-width: 600px) {
+                font-size: 20px
+            }
+        }
+
+        .banner-heading {
+            color: white;
+            text-align: center;
+            font-size: 40px;
+            max-width: 650px;
+            margin: auto;
+
+            @media screen and (max-width: 600px) {
+                font-size: 32px;
+            }
+
+        }
+
+        .banner-subheading {
+            color: rgb(233, 233, 233);
+            font-size: 22px;
+            max-width: 800px;
+            margin: auto;
+
+            @media screen and (max-width: 600px) {
+                font-size: 16px
+            }
+
+        }
+
+
+
+    }
+
+
+
+
+    .visitor-package-card {
+        width: 100%;
+        max-width: 390px;
+        height: 480px;
+        border-radius: 30px;
+        border: 1px solid rgba(145, 145, 145, 0.432);
+        position: relative;
+        margin: 20px auto;
+
+
+        // @media screen and (max-width: 600px) {
+        //     width: 370px;
+        //     min-width: 370px;
+
+        // }
+
+        .card-head--visitor {
+            width: 100%;
+            height: 100px;
+
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            &::after {
+                content: "";
+                background: rgba(0, 0, 0, 0.705);
+                position: absolute;
+                z-index: 0;
+                inset: 0;
+                border-top-right-radius: 30px;
+                border-top-left-radius: 30px;
+            }
+
+            .pass-gradient-image {
+                width: 100%;
+
+                height: 100px;
+                position: absolute;
+                z-index: -1;
+                border-top-right-radius: 30px;
+                border-top-left-radius: 30px;
+                object-fit: cover;
+
+
+            }
+
+            .content-wrap {
+                padding: 20px;
+                position: relative;
+                z-index: 2;
+                inset: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+
+            .left-wrap {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+
+                .price {
+                    color: white;
+                    font-size: 36px;
+                    font-weight: bold;
+                }
+
+
+            }
+
+            .pass-name {
+                color: white;
+                font-size: 20px;
+                text-transform: uppercase;
+            }
+
+            .right-wrap {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+
+                .label {
+                    text-align: center;
+                    font-size: 10px;
+                    width: 100%;
+                    color: rgb(197, 197, 197);
+                }
+
+
+            }
+        }
+
+      
+
+        .card-body-visitor {
+            padding: 20px;
+
+
+
+            .feature-items {
+
+
+                .feature-name-wrap {
+                    color: black;
+                    padding: 10px 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+
+                }
+
+                .feature-name {
+                    max-width: 220px;
+                }
+            }
+
+
+
+
+        }
+
+        .visitor-package-btn {
+            width: 200px;
+            padding: 10px;
+            background-color: $primary-color;
+            border-radius: 50px;
+            color: white;
+        }
+
+        .visitor-btn-wrapper {
+            position: absolute;
+            width: 100%;
+            bottom: 0px;
+            padding: 20px;
+            left: 0;
+
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .cta-content {
+        text-align: center;
+
+        a{
+            color: $primary-color;
+
+        }
+    }
+
+    .banner-wrapper {
+        height: 60vh;
+        .banner-img {
+            height: 60vh;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}

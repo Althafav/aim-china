@@ -1,0 +1,720 @@
+@import "reset.scss";
+@import "_partials/_typography";
+@import "_partials/_variables";
+@import "_partials/_functions";
+@import "_partials/_mixin";
+@import "_partials/_animations";
+@import "bootstrap-5.2.3/bootstrap.scss";
+@import "_partials/_controls";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  // overflow-x: hidden;
+}
+
+body {
+  background: white;
+  color: black;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 5px;
+  letter-spacing: -1px;
+
+  @media screen and (max-width: 800px) {
+    text-align: start;
+  }
+}
+
+p {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 5px;
+  letter-spacing: -0.5px;
+
+  @media (max-width: 600px) {
+    letter-spacing: 0;
+  }
+}
+
+.body-text-black {
+  background: linear-gradient(126deg, #343434 25.42%, #323232 74.58%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section {
+  margin: 60px 0;
+
+  @media screen and (max-width: 800px) {
+    margin: 40px 0;
+  }
+}
+
+.section-wrapper {
+  padding: 60px 0;
+
+  @media screen and (max-width: 800px) {
+    min-height: unset;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+.select-control {
+  width: 100%;
+  margin: 0;
+  min-height: 2rem;
+  padding: 10px;
+  color: rgb(99, 99, 99);
+}
+
+.heading-wrapper {
+  .section-heading {
+    font-size: 48px;
+    color: white;
+    line-height: 1.1;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 32px;
+    }
+
+    @media screen and (max-width: 600px) {
+      font-size: 28px;
+    }
+  }
+
+  .underline {
+    width: 100px;
+    height: 5px;
+    background-color: $primary-color-varient;
+  }
+}
+
+.description {
+  font-size: 18px;
+  color: $light-text;
+  max-width: 510px;
+  text-align: justify;
+
+  @media screen and (max-width: 800px) {
+    max-width: 400px;
+  }
+}
+
+hr {
+  color: white;
+  background: white;
+}
+
+.read-more {
+  color: $metalic-gold;
+}
+
+._error-inner {
+  color: $metalic-gold;
+}
+
+._form-thank-you {
+  color: rgb(88, 255, 102);
+  font-size: 20px;
+  text-align: justify;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid white;
+}
+
+.paragraph {
+  text-align: left;
+
+  @media screen and (max-width: 800px) {
+    text-align: left;
+  }
+}
+
+.register-interest-cta {
+  background: $primary-color;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+  font-weight: bold;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+.section-heading {
+  font-size: 48px;
+  font-weight: normal !important;
+  color: black;
+  letter-spacing: -3px;
+  text-align: center;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 800px) {
+    font-size: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+}
+
+.section-container {
+  max-width: 85% !important;
+  margin: auto;
+
+  @media screen and (max-width: 1550px) {
+    max-width: 95% !important;
+    margin: auto;
+  }
+
+  @media screen and (max-width: 800px) {
+    max-width: 95% !important;
+    margin: auto;
+  }
+}
+
+.fdi {
+  background: $fdi-primary;
+}
+
+.global-trade {
+  background: $global-trade-primary;
+}
+
+.advancedManufacturing {
+  background: $global-manufacturing;
+}
+
+.future-cities {
+  background: $future-cities;
+}
+
+.digital-economy {
+  background: $digital-economy;
+}
+
+.future-finance {
+  background: $future-finance;
+}
+
+.startup {
+  background: $startup;
+}
+
+.entrepreneurs {
+  background: $entrepreneurs;
+}
+
+.text-fdi {
+  color: $fdi-primary;
+}
+
+.inner-banner-section-wrapper {
+  position: relative;
+  background-color: black;
+  height: 400px;
+
+  .banner-image {
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+  }
+
+  video {
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+  }
+
+  .inner-text-container {
+    position: absolute;
+    z-index: 2;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+
+    .banner-heading {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      position: relative;
+      text-align: center;
+      font-size: 48px;
+      letter-spacing: -3px;
+
+      @media screen and (max-width: 800px) {
+        font-size: 32px;
+        text-align: start;
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.733);
+    z-index: 1;
+  }
+}
+
+.logo {
+  width: 100%;
+  object-fit: contain;
+  max-width: 280px;
+}
+
+.brochure-card {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .download-btn-floating {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 30px;
+    border: 1px solid white;
+    padding: 8px 12px;
+
+    p {
+      color: white;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+
+    .download-btn-floating {
+      opacity: 1;
+    }
+  }
+}
+
+.blog-card {
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .name {
+    font-weight: bold;
+  }
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.register-interest-form-wrapper {
+  .register-interest-submit-btn {
+    margin-top: 40px;
+    background-color: $primary-color;
+    padding: 8px 24px;
+
+    span {
+      color: white;
+    }
+  }
+
+  ._form-fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 0px;
+  }
+
+  ._form-label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+  }
+
+  ._row._checkbox-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 5px;
+  }
+
+  ._row._checkbox-radio span {
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+  }
+}
+
+.partner-logo {
+  width: 280px;
+  object-fit: contain;
+}
+
+.aim-btn {
+  background-color: $primary-color;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 50px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+input[readonly] {
+  background-color: #efecec !important;
+}
+
+.cta-btn {
+  padding: 8px 24px;
+  border-radius: 40px;
+}
+
+.black-replacer-nav {
+  background: black;
+  height: 139px;
+
+  @media screen and (max-width: 600px) {
+    height: 85px;
+  }
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.key-players-card {
+  box-shadow: 0.3125rem 0.3125rem 0.625rem 0.1rem rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  height: 350px;
+  overflow: hidden;
+
+  .card-speaker-item {
+    .card-body-speaker {
+      padding: 10px;
+    }
+
+    .speaker-image {
+      object-fit: contain;
+      background: white;
+    }
+
+    .name {
+      text-decoration: underline;
+      text-align: left;
+      font-size: 16px;
+      max-width: 200px;
+    }
+
+    .designation {
+      font-size: 10px;
+      color: $primary-color;
+    }
+
+    .company {
+      font-size: 12px;
+    }
+  }
+}
+
+.key-players-wrap {
+  .key-player-name {
+    padding: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+
+    text-align: center;
+  }
+}
+
+.keyplayers-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 20px;
+  box-shadow: 0.3125rem 0.3125rem 0.625rem 0.1rem rgba(0, 0, 0, 0.123);
+
+  .key-player-image {
+    width: 140px;
+
+    object-fit: contain;
+  }
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.css-13cymwt-control {
+  height: 3.6875rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.content-wrapper {
+  h2,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black;
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: $primary-color;
+  }
+
+  ul li {
+    list-style: disc;
+  }
+
+  ol,
+  ul {
+    margin-left: 20px;
+  }
+
+  ol li {
+    list-style: decimal;
+  }
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: $primary-color; /* Change the color */
+  height: 4px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1031;
+}
+
+.text-wrap {
+  text-align: left;
+}
+
+.gradient-1 {
+  background: linear-gradient(
+      280.01deg,
+      #d9edf1 2.89%,
+      #ffffff 42.75%,
+      #dcf2ff 97.11%
+    ),
+    #d9d9d9;
+}
+
+.section-heading-2026 {
+  font-size: clamp(1.7rem, 4vw, 45px);
+  font-weight: normal;
+  letter-spacing: -0.03em;
+}
+
+.theme-gradient-text {
+  background: linear-gradient(
+      271.23deg,
+      #099ffc 33.49%,
+      rgba(255, 255, 255, 0) 99.85%
+    ),
+    #66c4ff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.theme-gradient-text-2 {
+  background: linear-gradient(#099ffc, rgba(255, 255, 255, 0) 99.85%), #66c4ff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.text-globalmarkets {
+  color: $globalmarket-primary;
+}
+
+.rounded-3xl {
+  border-radius: 30px;
+}
+
+.image-4-5-aspect {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+@import "./locals/menu-component.scss";
+@import "./locals/home/banner-component.scss";
+@import "./locals/cta-btn.scss";
+
+@import "./locals/home.scss";
+
+@import "./locals/embla.scss";
+@import "./locals/home/theme-section-component.scss";
+@import "./locals/home/audientsctacomponents.scss";
+@import "./locals/home/portfoli-cta-component.scss";
+@import "./locals/home/sustainable-component.scss";
+@import "./locals/home/testimonials-component.scss";
+@import "./locals/home/articles-components.scss";
+@import "./locals/home/cta-banner-component.scss";
+
+@import "./locals/about.scss";
+@import "./locals/home/statsSection.scss";
+
+@import "./locals/UI/accordion.scss";
+
+@import "./locals/fdi/fdi-home.scss";
+@import "./locals/fdi/card-grid.scss";
+@import "./locals/event-highlights.scss";
+@import "./locals/footer-component.scss";
+
+@import "./locals/travel-partners.scss";
+@import "./locals/UI/loader.scss";
+@import "./locals/articles.scss";
+
+@import "./locals/thank-you.scss";
+
+@import "./locals/speakers-page.scss";
+
+@import "./locals/packages.scss";
+@import "./locals/packages-2.scss";
+@import "./locals/packages-3.scss";
+
+@import "./locals/fdi/fdi-menu-compoenent.scss";
+
+@import "./locals/fdi/investment-destinations.scss";
+@import "./locals/fdi/fdi-award.scss";
+
+@import "./locals/search-page.scss";
+
+@import "./locals/hotel-page.scss";
+@import "./locals/visitor-landing.scss";
+@import "./locals/awardspage.scss";
+@import "./locals/slider/swiper.scss";
+@import "./locals/UI/homepopup.scss";
+@import "./locals/basicContent.scss";
+@import "./locals/exhibitors-page.scss";
+@import "./locals/page-not-found.scss";
+@import "./locals/UI/Speaker/speakerimageTemplate.scss";
+@import "./locals/event-information.scss";
+@import "./locals/home/featuresActivitiesSwiper.scss";
+@import "./locals/2026/pillarpage.scss";
+@import "./locals/2026/opencalls-page.scss";
+@import "./locals/2026/forms.scss";
+@import "./locals/2026/features-activities-page.scss";
+@import "./locals/2026/aim-2026-page.scss";
+@import "./locals/2026/matchingpage.scss";
+@import "./locals/2026/banner2026component.scss";
+@import "./components/button.scss";
+@import "./locals/2026/conference-page.scss";
+@import "./locals/2026/features-activities-page.scss";
+@import "./locals/2026/award-page-2026.scss";
+@import "./components/CTACardBlock.scss";
+@import "./locals/2026/knowledge-hub-page.scss";
+@import "./locals/mou.scss";
+@import "./locals/agenda-page.scss";
+@import "./locals/speaker-popupmodal.scss";
+
+@import "customstyles.scss";
+@import "reset.scss";
+
+@import "./locals/portfolio/banner.scss";
+@import "./locals/fdi/fdi-home.scss";
+@import "./locals/fdi/card-grid.scss";
+@import "./locals/fdi/fdi-award.scss";
+@import "./locals/fdi/fdi-menu-compoenent.scss";
+@import "./locals/fdi/investment-destinations.scss";

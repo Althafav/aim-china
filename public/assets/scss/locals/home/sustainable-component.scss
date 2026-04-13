@@ -1,0 +1,86 @@
+.sustainable-section-wrapper {
+    position: relative;
+    background-attachment: fixed;
+    padding: 20px 0;
+
+
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 234px;
+    }
+
+    .sustainable-bg {
+        width: 100%;
+
+
+        @media screen and (max-width: 800px) {
+            height: 100%;
+
+        }
+    }
+
+
+    .left-section {
+        padding: 60px 0;
+
+        @media screen and (max-width: 1000px) {
+            padding: 0;
+
+        }
+
+        .section-heading--sustainable {
+            font-size: 64px;
+            color: $future-cities;
+            font-weight: bold;
+            letter-spacing: -3px;
+
+            @media screen and (max-width: 1000px) {
+                font-size: 32px;
+                text-align: start;
+
+            }
+        }
+    }
+
+    .right-section {
+        padding: 60px 0;
+        max-width: 640px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+
+        @media screen and (max-width: 1000px) {
+            padding: 0;
+            max-width: 100%;
+            width: 100%;
+
+        }
+
+        .paragraph {
+            color: white;
+            text-align: justify;
+
+            @media screen and (max-width: 1000px) {
+
+                text-align: left;
+
+            }
+        }
+
+        .read-more-btn {
+            margin-top: 60px;
+            background: $primary-color;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}

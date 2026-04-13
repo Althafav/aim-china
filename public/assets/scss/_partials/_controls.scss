@@ -1,0 +1,60 @@
+﻿.form-label {
+    color: $b6;
+   
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+button {
+    border: none;
+    outline: none;
+
+    &:hover, &:active, &:focus {
+        border: none;
+        outline: none;
+    }
+}
+
+.form-control {
+    font-size: inherit;
+}
+
+input.form-control, select.form-control, textarea.form-control {
+    min-height: 3.6875rem;
+    border: none;
+    border: 2px solid $d;
+    /* border-bottom: .125rem solid #ddd; */
+    border-radius: 8;
+    box-shadow: none;
+    outline: none;
+    padding-right: 40px;
+
+    &:active, &:focus {
+        border-color: $primary-color;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+
+
+// input[type="checkbox"] {
+//     margin: 10px;
+// }
+
+
+select {
+    appearance: none; 
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns%3D%27http://www.w3.org/2000/svg%27 fill%3D%27none%27 viewBox%3D%270 0 24 24%27 stroke%3D%27currentColor%27%3E%3Cpath stroke-linecap%3D%27round%27 stroke-linejoin%3D%27round%27 stroke-width%3D%272%27 d%3D%27M19 9l-7 7-7-7%27 /%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem; // Add space for the dropdown icon
+}
+
+// To support older browsers
+select::-ms-expand {
+    display: none; // Hide the default arrow for Internet Explorer
+}

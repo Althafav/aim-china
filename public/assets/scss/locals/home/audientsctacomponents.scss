@@ -1,0 +1,55 @@
+.audients-section-wrapper {
+
+    .main-head {
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+        color: black;
+
+        line-height: 1.1;
+        display: flex;
+        flex-direction: column;
+        color: $primary-color-varient;
+        letter-spacing: -1px;
+        @media screen and (max-width: 800px) {
+            font-size: 32px;
+
+        }
+    }
+
+    .sub-head {
+        font-size: 24px;
+        color: $light-text;
+        letter-spacing: -1px;
+
+        @media screen and (max-width: 800px) {
+            font-size: 20px;
+            margin-top: 10px;
+            text-align: center;
+           
+        }
+    }
+
+    .cta-card-item {
+        width: 100%;
+        height: 200px;
+        // background: #000;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        cursor: pointer;
+
+        transition: all 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-10px);
+           
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+}

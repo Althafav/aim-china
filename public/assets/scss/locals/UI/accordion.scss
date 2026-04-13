@@ -1,0 +1,53 @@
+.frequently-asked-questions-wrapper {
+  padding-bottom: 120px;
+
+  .faq-heading {
+    font-size: 48px;
+    font-weight: 400;
+    color: black;
+
+    letter-spacing: -2px;
+  }
+}
+
+.accordion {
+  background-color: white;
+
+  .accordion-item {
+    border: none;
+
+    a {
+      color: black;
+      text-decoration: underline;
+    }
+
+    .accordion-header {
+      .accordion-button {
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        border: none;
+        box-shadow: none;
+        border-bottom: 1px solid rgba(131, 131, 131, 0.5);
+        padding: 30px 0;
+
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+
+        &:not(.collapsed) {
+          background-color: white; // Keep background white when expanded
+          color: black; // Keep text black
+        }
+      }
+    }
+
+    .accordion-body {
+      background-color: white;
+      color: black;
+      border-bottom: 1px solid rgba(131, 131, 131, 0.5);
+      padding: 20px;
+    }
+  }
+}

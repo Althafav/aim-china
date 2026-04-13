@@ -1,0 +1,161 @@
+.event-highlights-page-wrapper {
+
+    .banner-section-wrapper {
+        height: 100vh;
+        position: relative;
+
+
+
+        video {
+
+            object-fit: cover;
+            width: 100%;
+            height: 100vh;
+
+            @media screen and (max-width: 800px) {
+                height: 100vh;
+
+            }
+        }
+    }
+
+    .theme-of-the-year {
+        height: 390px;
+        display: flex;
+        align-items: center;
+
+        .section-tag {
+            color: white;
+
+        }
+
+        .section-head {
+            background: linear-gradient(to right, white, #099FFC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+         
+
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-weight: bold;
+
+            text-align: center;
+
+            @media screen and (max-width: 800px) {
+                font-size: 32px;
+
+            }
+        }
+
+        .sub-1 {
+            font-size: 22px;
+            text-align: center;
+
+            @media screen and (max-width: 800px) {
+                font-size: 22px;
+                letter-spacing: 0;
+
+            }
+        }
+
+        .main-text {
+            font-size: 48px;
+
+            margin: auto;
+
+            @media screen and (max-width: 800px) {
+                font-size: 22px;
+                letter-spacing: 0;
+
+            }
+        }
+
+
+    }
+
+    .hosting-abudhabi {
+        height: 100vh;
+        position: relative;
+
+        @media screen and (max-width: 800px) {
+            height: 120vh;
+        }
+
+
+
+        .aim2025abudhabi {
+            position: absolute;
+            z-index: -1;
+            bottom: 0;
+        }
+
+        .inner-text-content {
+            position: absolute;
+            z-index: 1;
+            top: 40px;
+        }
+    }
+
+    .theme-subHead {
+        font-size: 20px;
+        color: $primary-color-varient;
+    }
+
+    .theme-mainHead {
+        font-size: 32px;
+        color: $primary-color-varient;
+        font-weight: bold;
+    }
+
+    .benefit-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .benefits-card {
+        color: black;
+        width: 100%;
+        padding: 20px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+        .name {
+            font-size: 18px;
+            color: black;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .description {
+            font-size: 16px;
+            text-align: left;
+        }
+
+        &:hover {
+
+            transform: scale(1.05);
+        }
+
+    }
+
+    .stay-tuned {
+        font-size: 38px;
+        font-weight: 600;
+        color: $primary-color;
+        text-transform: uppercase;
+    }
+
+    .join-us-caption {
+        font-size: 24px;
+
+        p {
+            font-size: 24px;
+        }
+    }
+
+    .join-us-caption-2 {
+        font-size: 32px;
+    }
+
+}

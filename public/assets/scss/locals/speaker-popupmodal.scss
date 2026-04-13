@@ -1,0 +1,21 @@
+.speaker-popup-modal-wrapper {
+  .modal-dialog {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .modal-content {
+      background: linear-gradient(
+        199deg,
+        #fff -9.19%,
+        #b6e2fe 46.46%,
+        #099ffc 125.13%
+      );
+
+      .session-header-bg {
+        background: linear-gradient(198deg, #081a2e 0%, #099ffc 100%);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+    }
+  }
+}

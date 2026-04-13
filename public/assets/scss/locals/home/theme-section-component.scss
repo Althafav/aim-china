@@ -1,0 +1,114 @@
+.theme-section-wrapper {
+  overflow: hidden;
+
+  img {
+    height: 100%;
+  }
+
+  .sub-head {
+    .main-head {
+      display: inline-flex;
+      flex-wrap: wrap;
+      font-size: 40px;
+      font-weight: normal;
+      text-align: left;
+      line-height: 1.1;
+      color: $primary-color;
+      letter-spacing: 0;
+      max-width: 1100px;
+      background: linear-gradient(to right, #b6b6b6, #b6b6b6) no-repeat;
+      -webkit-background-clip: text;
+      background-clip: text;
+      background-size: 0%;
+      transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+      position: relative;
+
+      @media screen and (max-width: 800px) {
+        font-size: 28px;
+        letter-spacing: 0;
+        line-height: 1.4;
+      }
+
+      .small-head {
+        font-size: 40px;
+        letter-spacing: -2px;
+
+        @media screen and (max-width: 800px) {
+          font-size: 24px;
+          letter-spacing: -2px;
+          line-height: 1.1;
+        }
+      }
+    }
+
+    .theme-gradient-text {
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .theme-cta-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    align-items: start;
+    text-align: center;
+    gap: 1rem;
+
+    padding: clamp(1rem, 5vw, 3rem) clamp(1rem, 5vw, 2rem);
+
+    background: linear-gradient(
+        280.01deg,
+        #d9edf1 2.89%,
+        #ffffff 42.75%,
+        #dcf2ff 97.11%
+      ),
+      #d9d9d9;
+    box-shadow: 0px 12px 13.7px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 22px;
+
+   
+  }
+
+  .cta-heading {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.1;
+    max-width: 100%;
+    margin: 0;
+
+    background: linear-gradient(90deg, #099ffc 0%, #66c4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    @media screen and (max-width: 600px) {
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+
+  .theme-cta {
+    display: inline-block;
+
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  // Tablet and up: row layout
+  @media (min-width: 768px) {
+    .theme-cta-wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .cta-heading {
+      max-width: 70%;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+
+
+.cta-banner-component-wrapper {
+  .banner-content {
+    padding: 0px 80px;
+
+    @media screen and (max-width: 800px) {
+      padding: 0;
+    }
+  }
+
+  .cta-banner-heading {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 800px) {
+      font-size: 48px;
+    }
+  }
+
+  .paragraph {
+    max-width: 800px;
+    text-align: start;
+  }
+
+  .registernow-cta {
+    text-transform: uppercase;
+    background: white;
+    border: 2px solid black;
+    border-radius: 50px;
+    width: 332px;
+    height: 72px;
+    font-size: 24px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+      border: none;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: unset;
+      height: unset;
+      padding: 8px 12px;
+      font-size: 18px;
+    }
+  }
+}

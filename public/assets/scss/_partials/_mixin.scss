@@ -1,0 +1,98 @@
+@mixin set-transition($p, $t, $m) {
+    transition: $p $t $m;
+    -webkit-transition: $p $t $m;
+    -moz-transition: $p $t $m;
+    -o-transition: $p $t $m;
+}
+
+@mixin set-transition-custom($l...) {
+    transition: $l;
+    -webkit-transition: $l;
+    -moz-transition: $l;
+    -o-transition: $l;
+}
+
+@mixin no-transition() {
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+}
+
+@mixin padding($min, $max) {
+    @for $i from $min through $max {
+        .p-#{$i} {
+            padding: #{$i}px !important;
+        }
+
+        .p-l-#{$i} {
+            padding-left: #{$i}px !important;
+        }
+
+        .p-r-#{$i} {
+            padding-right: #{$i}px !important;
+        }
+
+        .p-t-#{$i} {
+            padding-top: #{$i}px !important;
+        }
+
+        .p-b-#{$i} {
+            padding-bottom: #{$i}px !important;
+        }
+    }
+}
+
+@mixin margin($min, $max) {
+    @for $i from $min through $max {
+        .m-#{$i} {
+            margin: #{$i}px !important;
+        }
+
+        .m-l-#{$i} {
+            margin-left: #{$i}px !important;
+        }
+
+        .m-r-#{$i} {
+            margin-right: #{$i}px !important;
+        }
+
+        .m-t-#{$i} {
+            margin-top: #{$i}px !important;
+        }
+
+        .m-b-#{$i} {
+            margin-bottom: #{$i}px !important;
+        }
+    }
+}
+
+@mixin set-animation($n, $t, $m, $d, $r, $c) {
+    /*
+        $n - name
+        $t - time
+        $m - motion
+        $d - delay
+        $r - repeat
+        $c - direction
+    */
+    -webkit-animation-name: $n;
+    -webkit-animation-duration: $t;
+    -webkit-animation-timing-function: $m;
+    -webkit-animation-delay: $d;
+    -webkit-animation-iteration-count: $r;
+    -webkit-animation-fill-mode: $c;
+    animation-name: $n;
+    animation-duration: $t;
+    animation-timing-function: $m;
+    animation-delay: $d;
+    animation-iteration-count: $r;
+    animation-fill-mode: $c;
+}
+
+@mixin no-animation() {
+    animation: none;
+    -webkit-animation: none;
+    -moz-animation: none;
+    -o-animation: none;
+}

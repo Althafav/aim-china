@@ -1,0 +1,129 @@
+/* Fonts */
+$ff-100: Montserrat-ExtraLight, Helvetica, sans-serif, Arial;
+$ff-200: Montserrat-Light, Helvetica, sans-serif, Arial;
+$ff-300: Montserrat-Thin, Helvetica, sans-serif, Arial;
+$ff-400: Montserrat-Regular, Helvetica, sans-serif, Arial;
+$ff-500: Montserrat-Medium, Helvetica, sans-serif, Arial;
+$ff-600: Montserrat-SemiBold, Helvetica, sans-serif, Arial;
+$ff-700: Montserrat-Bold, Helvetica, sans-serif, Arial;
+$ff-800: Montserrat-ExtraBold, Helvetica, sans-serif, Arial;
+$ff-900: Montserrat-Black, Helvetica, sans-serif, Arial;
+$ff-taj-100: Tajawal-ExtraLight, Helvetica, sans-serif, Arial;
+$ff-taj-200: Tajawal-Light, Helvetica, sans-serif, Arial;
+$ff-taj-300: Tajawal-Regular, Helvetica, sans-serif, Arial;
+$ff-taj-400: Tajawal-Medium, Helvetica, sans-serif, Arial;
+$ff-taj-500: Tajawal-Bold, Helvetica, sans-serif, Arial;
+$ff-taj-600: Tajawal-ExtraBold, Helvetica, sans-serif, Arial;
+$ff-taj-700: Tajawal-Black, Helvetica, sans-serif, Arial;
+$ff-ami-100: Amiri-Regular, Helvetica, sans-serif, Arial;
+$ff-ami-600: Amiri-Bold, Helvetica, sans-serif, Arial;
+$ff-har-100: Harmattan-Regular, Helvetica, sans-serif, Arial;
+$ff-har-600: Harmattan-Bold, Helvetica, sans-serif, Arial;
+/* General */
+$fs: 0.875rem;
+$lh: 1.625rem;
+/* Colors */
+$c-red: #bb272d;
+$c-gray: #8d9094;
+$c-black: #282626;
+$c-black-opacity: rgba(40, 38, 38, 0.3803921569);
+
+$c-blue: #2a6894;
+$c-dark-blue: #2b5572;
+$c-navy: #132c3c;
+$c-turquoise: #73fbfc;
+$b: #000;
+$c0: #0c0c0c;
+$b1: #111;
+$b2: #222;
+$b3: #333;
+$b39: #393939;
+$b4: #444;
+$b52: #525252;
+$b6: #666;
+$b8: #888;
+$bf: #bfbfbf;
+$a: #aaa;
+$a2: #2a2a2a;
+$c: #ccc;
+$c1: #c1c1c1;
+$c3: #c3c3c3;
+$c5: #c5c5c5;
+$cd: #cdcdcd;
+$d: #ddd;
+$d0d1: #d0d0d1;
+$e: #eee;
+$e1: #e1e1e1;
+$e5: #e5e5e5;
+$e6: #e6e6e6;
+$e6e4: #e6e4e4;
+$ec: #ececec;
+$e9: #e9e9e9;
+$ea: #eaeaea;
+$ef: #efefef;
+$f1: #f1f1f1;
+$f2: #f2f2f2;
+$f5: #f5f5f5;
+$f7: #f7f7f7;
+$f9: #f9f9f9;
+$fa: #fafafa;
+$fc: #fcfcfc;
+$f: #fff;
+$success: #00a025;
+$danger: #af0011;
+$c-fb: #4064ac;
+$c-twitter: #5ba4d6;
+$c-instagram: #7936aa;
+$c-youtube: #f70000;
+$c-telegram: #28a7ea;
+$c-cookie-bg: #ff9800;
+$c-cookie-link: #003b7b;
+$c-testimonial: #d3fefe;
+$dark-section: #efefef;
+
+// my colors
+$light-text: #545454;
+$secondary-text: #6f6f6f;
+$primary-color: #099ffc;
+$primary-light: #76cbff; 
+$primary-color-varient: #202c4c;
+$jet-black: #0a0a0a;
+$metalic-gold: #d4af37;
+$linear-gradient-primary: linear-gradient(to right, #84ccff, $primary-color);
+$linear-gradient-secondary: linear-gradient(
+  to right,
+  $jet-black,
+  $metalic-gold
+);
+//
+
+$margin-top-below-menu: 120px;
+
+$fdi-primary: #ff2c28;
+$global-trade-primary: #ffc42c;
+$global-manufacturing: #12bcd4;
+$future-cities: #00c753;
+
+$digital-economy: #328350;
+$future-finance: #7428f4;
+$startup: #ff8521;
+$entrepreneurs: #00d5ba;
+
+$aic-primary: #2997fd;
+$aic-secondary: #b956ff;
+
+$box-shadow: 0.3125rem 0.3125rem 0.625rem 0.1rem rgba(0, 0, 0, 0.123);
+
+$globalmarket-primary: #ff4b4b;
+$futureEconomies-primary: #00e89e;
+$nextGenPrimary: #aa00e8;
+
+$gradient: linear-gradient(
+    280.01deg,
+    #d9edf1 2.89%,
+    #ffffff 42.75%,
+    #dcf2ff 97.11%
+  ),
+  #d9d9d9;
+
+$content-text-color-2026: #787878;

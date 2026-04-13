@@ -1,0 +1,46 @@
+.features-activities-page {
+  .feature-cta-item {
+    transition: all 0.2s ease-in;
+    filter: grayscale(1);
+    &:hover {
+      filter: grayscale(0);
+      transform: translateY(-10px);
+    }
+    img {
+      object-fit: contain;
+      border-radius: 30px;
+    }
+    border-radius: 30px;
+    box-shadow: -2px 5px 5px -1px rgba(0, 0, 0, 0.09);
+    -webkit-box-shadow: -2px 5px 5px -1px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: -2px 5px 5px -1px rgba(0, 0, 0, 0.09);
+  }
+}
+
+.side-forum-page-detail {
+  .banner-img {
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .related-items-section {
+    .related-items {
+      .related-item-image {
+        height: 200px;
+        object-fit: cover;
+        border-radius: 30px;
+      }
+    }
+  }
+}
+
+.mou-page-wrapper-2026 {
+  .count {
+    font-size: 96px;
+  }
+  .featured-entity-section {
+    .heading {
+      color: #646464;
+    }
+  }
+}

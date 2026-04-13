@@ -1,0 +1,98 @@
+.footer-component-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-bottom: 20px;
+
+   
+    .footer-bg {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .footer-content {
+        padding: 60px 0;
+
+        position: relative;
+
+        .newslettercta-btn {
+            background: $primary-color;
+            color: white;
+            border-radius: 20px;
+            padding: 8px 16px;
+        }
+
+
+
+        .logos {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav-head {
+            font-weight: bold;
+            color: white;
+            font-size: 15px;
+        }
+
+        .footer-nav {
+            p {
+                color: white;
+                font-size: 15px;
+                padding-bottom: 5px;
+                margin-bottom: 5px;
+                cursor: pointer;
+                position: relative;
+                width: fit-content;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 1px;
+                    left: 0;
+                    width: 50%;
+                    transform: translateX(0%);
+                    height: 2px;
+                    background: $primary-color;
+                    border-radius: 8px;
+                    opacity: 0;
+                    transition: transform 0.3s ease-in, opacity 0.15s ease-in-out;
+                }
+
+                &:hover:after {
+                    animation: lightningEffect 0.3s ease-in-out;
+                    transform: translateX(100%);
+
+                }
+
+            }
+
+            .footer-nav-label {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .aim-logo-white {
+        width: 140px;
+    }
+
+    .copy-right {
+
+        font-size: 14px;
+        color: white;
+        padding: 0;
+        margin: 0;
+    }
+
+    .g-recaptcha{
+        margin-left: 5px;
+    }
+
+
+}
