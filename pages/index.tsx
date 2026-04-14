@@ -156,19 +156,19 @@ function Home({ pageData }: { pageData: any }) {
                   {pageData.aimtalkthemetag.value}
                 </span>
                 <div className="mt-4">
-                  <div className="d-flex flex-wrap">
+                  <div className="d-flex flex-wrap align-items-center justify-content-between gap-3">
                     <h2
-                      className="mt-2 text-primary section-heading-2026"
-                      style={{ maxWidth: "1200px" }}
+                      className="mt-2 text-primary  mb-0"
+                      style={{ maxWidth: "900px", flex: "1 1 auto" }}
                     >
                       {pageData.aimtalkthemeheading.value}
                     </h2>
 
-                    <div>
+                    <div style={{ flex: "0 0 auto" }}>
                       <img
                         src={pageData.aimtalkpartnerlogo.value[0]?.url}
                         alt=""
-                        style={{ width: "150px" }}
+                        style={{ width: "150px", objectFit: "contain" }}
                       />
                     </div>
                   </div>
