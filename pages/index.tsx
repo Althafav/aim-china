@@ -123,8 +123,8 @@ function Home({ pageData }: { pageData: any }) {
               )}
             </div>
 
-            <div className="col-lg-6 h-100">
-              <div className="ratio ratio-4x3">
+            <div className="col-lg-6 ">
+              <div className="">
                 <img
                   src={pageData.aimchinaimage.value[0]?.url}
                   alt=""
