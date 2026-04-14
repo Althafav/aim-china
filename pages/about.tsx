@@ -128,7 +128,7 @@ export default function About({ pageData }: { pageData: Aim2026page }) {
                 </div>
                 <img
                   style={{ height: "300px" }}
-                  className="rounded-3xl w-100 h-100"
+                  className="rounded-3xl w-100 "
                   src={pageData.aimtalkimage.value[0]?.url}
                   alt={pageData.aimtalkheading.value}
                 />

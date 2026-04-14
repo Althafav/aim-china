@@ -7,7 +7,6 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
-
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
@@ -21,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
         router.replace("/packages?source=website");
       }
 
-       if (window.location.pathname === "/contact-us") {
+      if (window.location.pathname === "/contact-us") {
         router.replace("/register-interest");
       }
     }
