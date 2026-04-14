@@ -17,6 +17,7 @@ import CTABlockComponent from "@/components/UI/CTABlock/CTABlockComponent";
 import ButtonComponent from "@/components/Button/ButtonComponent";
 import { link } from "fs";
 import HomeSpeakersComponentCurrent from "@/components/Home/HomeSpeakersComponentCurrent";
+import StatsSection from "@/components/Home/StatsSection";
 
 const HomeSPETabs = dynamic(() => import("@/components/Home/HomeSPETabs"), {
   ssr: false,
@@ -192,6 +193,13 @@ function Home({ pageData }: { pageData: any }) {
           />
         </div>
       </div>
+
+      <StatsSection
+        statsheading={pageData.statsheading.value}
+        statscontent={pageData.statscontent.value}
+        statsitems={pageData.statsitems.value}
+        downloadreportlink={pageData.downloadreportlink.value}
+      />
       <PillarSection pageData={pageData} />
 
       <div>
