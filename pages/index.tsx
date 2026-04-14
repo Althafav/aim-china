@@ -159,7 +159,7 @@ function Home({ pageData }: { pageData: any }) {
                   <div className="d-flex flex-wrap">
                     <h2
                       className="mt-2 text-primary section-heading-2026"
-                      style={{ maxWidth: "1000px" }}
+                      style={{ maxWidth: "1200px" }}
                     >
                       {pageData.aimtalkthemeheading.value}
                     </h2>

@@ -10,9 +10,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 
 export default function HomeSpeakersComponentCurrent() {
-  const [speakerData, setSpeakerData] = useState<conferenceSpeakerModel2025[]>(
-    []
-  );
+  const [speakerData, setSpeakerData] = useState<conferenceSpeakerModel2025[]>([]);
   const [loading, setLoading] = useState(true);
   const { locale } = useRouter();
 
@@ -32,18 +30,15 @@ export default function HomeSpeakersComponentCurrent() {
     fetchSpeakers();
   }, []);
 
-  // Return nothing if no data
-  if (speakerData.length <= 0 && !loading) return null;
+  if (!loading && speakerData.length === 0) return null;
 
-  // Filter speakers by type
   const highLevelSpeakers = speakerData.filter((s) => s.HighLevel);
   const regularSpeakers = speakerData.filter((s) => !s.HighLevel);
 
   const swiperSettings = {
     grabCursor: true,
     centeredSlides: false,
-    spaceBetween: 10,
-    slidesPerView: 4.5,
+    spaceBetween: 16,
     loop: true,
     autoplay: {
       delay: 3000,
@@ -52,58 +47,72 @@ export default function HomeSpeakersComponentCurrent() {
     },
     speed: 1000,
     modules: [Autoplay],
-    className: "SpeakerSwiper",
     breakpoints: {
-      320: { slidesPerView: 1.5, spaceBetween: 10 },
-      480: { slidesPerView: 1.5, spaceBetween: 10 },
-      768: { slidesPerView: 3, spaceBetween: 10 },
-      1024: { slidesPerView: 3.2, spaceBetween: 10 },
-      1280: { slidesPerView: 5.5, spaceBetween: 10 },
-      1440: { slidesPerView: 6.2, spaceBetween: 10 },
+      0:    { slidesPerView: 1.5, spaceBetween: 10 },
+      480:  { slidesPerView: 2,   spaceBetween: 12 },
+      768:  { slidesPerView: 3,   spaceBetween: 14 },
+      1024: { slidesPerView: 4,   spaceBetween: 16 },
+      1280: { slidesPerView: 5,   spaceBetween: 16 },
+      1440: { slidesPerView: 6,   spaceBetween: 16 },
     },
   };
 
-  const renderSpeakerCard = (item: conferenceSpeakerModel2025) => (
-    <Link href={`/speaker/${item.ItemID}`} style={{ color: "unset" }}>
-      <div className="card-speaker-itemv2 border "  >
-        <div className="speaker-image-wrapperv2">
+  const SpeakerCard = ({ item }: { item: conferenceSpeakerModel2025 }) => (
+    <Link href={`/speaker/${item.ItemID}`} style={{ color: "unset", textDecoration: "none" }}>
+      <div
+        className="card border-0 shadow-sm overflow-hidden"
+        style={{ borderRadius: "12px" }}
+      >
+        <div style={{ position: "relative", width: "100%", aspectRatio: "3/4" }}>
           <Image
-            width={290}
-            height={400}
-            src={item?.Image}
-            alt={item.FirstName}
-            className="speaker-imagev2"
-            style={{ objectFit: "cover", objectPosition: "center" }}
+            fill
+            src={item.Image}
+            alt={`${item.FirstName} ${item.LastName}`}
+            style={{ objectFit: "cover", objectPosition: "center top" }}
+            sizes="(max-width: 480px) 60vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 17vw"
           />
         </div>
-        <div className="card-body-speaker-floatingv2">
-          <p className="name small" style={{ fontSize: "14px" }}>
+        <div className="card-body px-3 py-2">
+          <p className="mb-1 fw-semibold text-dark" style={{ fontSize: "14px", lineHeight: "1.3" }}>
             {item.FirstName} {item.LastName}
           </p>
-          <p className="designation small" style={{ fontSize: "14px" }}>
+          <p className="mb-0 text-secondary" style={{ fontSize: "12px", lineHeight: "1.3" }}>
             {item.Designation}
           </p>
-          <p style={{ fontSize: "12px" }}>{item.Company}</p>
+          <p className="mb-0 text-muted" style={{ fontSize: "11px" }}>
+            {item.Company}
+          </p>
         </div>
       </div>
     </Link>
   );
 
-  const renderPlaceholder = () => (
+  const SkeletonCard = () => (
+    <div className="card border-0 shadow-sm overflow-hidden placeholder-glow" style={{ borderRadius: "12px" }}>
+      <div style={{ aspectRatio: "3/4", background: "#e0e0e0" }} className="placeholder w-100" />
+      <div className="card-body px-3 py-2">
+        <p className="placeholder col-8 mb-1" style={{ height: "14px" }} />
+        <p className="placeholder col-6 mb-1" style={{ height: "12px" }} />
+        <p className="placeholder col-4 mb-0" style={{ height: "11px" }} />
+      </div>
+    </div>
+  );
+
+  const SpeakerSwiper = ({ speakers }: { speakers: conferenceSpeakerModel2025[] }) => (
+    <Swiper {...swiperSettings}>
+      {speakers.map((item) => (
+        <SwiperSlide key={item.ItemID}>
+          <SpeakerCard item={item} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+
+  const SkeletonSwiper = () => (
     <Swiper {...swiperSettings}>
       {Array.from({ length: 8 }).map((_, i) => (
-        <SwiperSlide key={`placeholder-${i}`}>
-          <div className="card-speaker-item border placeholder-glow">
-            <div className="speaker-image-wrapper">
-              <div
-                style={{
-                  width: "100%",
-                  height: "150px",
-                  backgroundColor: "#e0e0e0",
-                }}
-              ></div>
-            </div>
-          </div>
+        <SwiperSlide key={`skeleton-${i}`}>
+          <SkeletonCard />
         </SwiperSlide>
       ))}
     </Swiper>
@@ -111,68 +120,37 @@ export default function HomeSpeakersComponentCurrent() {
 
   return (
     <>
-      {/* --- High Level Speakers Section --- */}
-      {highLevelSpeakers.length > 0 && (
-        <div className="speaker-component-wrapper-2026v2 py-5">
-          <div className="d-flex justify-content-between align-items-center flex-wrap gap-3">
-            <h2
-              className="section-heading-2026 text-black text-start mb-0"
-              style={{ maxWidth: "800px" }}
-            >
-              {locale === "cn" ? "高级演讲者" : "AIM Congress - China Chapter 2025 High Level Speakers "}
+      {/* High Level Speakers */}
+      {(loading || highLevelSpeakers.length > 0) && (
+        <div className="py-5">
+          <div className="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+            <h2 className="h4 fw-bold text-dark mb-0" style={{ maxWidth: "800px" }}>
+              {locale === "cn"
+                ? "高级演讲者"
+                : "AIM Congress - China Chapter 2025 High Level Speakers"}
             </h2>
             <ButtonComponent name="View all Speakers" link="/speakers-2025" />
           </div>
-
-          <div className="row mt-4 slider-with-gradients position-relative">
-            {loading ? (
-              renderPlaceholder()
-            ) : (
-              <Swiper {...swiperSettings}>
-                {highLevelSpeakers.slice(0, 20).map((item) => (
-                  <SwiperSlide key={item.ItemID}>
-                    {renderSpeakerCard(item)}
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            )}
+          <div className="position-relative">
+            {loading ? <SkeletonSwiper /> : <SpeakerSwiper speakers={highLevelSpeakers.slice(0, 20)} />}
           </div>
         </div>
       )}
 
-      {/* --- Add spacing between the two sections --- */}
-      {highLevelSpeakers.length > 0 && regularSpeakers.length > 0 && (
-        <div className="my-5" />
-      )}
-
-      {/* --- Regular Speakers Section --- */}
-      {regularSpeakers.length > 0 && (
-        <div className="speaker-component-wrapper-2026v2 py-5">
-          <div className="d-flex justify-content-between align-items-center flex-wrap gap-3">
-            <h2
-              className="section-heading-2026 text-black text-start mb-0"
-              style={{ maxWidth: "800px" }}
-            >
-              {locale === "cn" ? "扬声器" : "AIM Congress - China Chapter 2025 Speakers "}
+      {/* Regular Speakers */}
+      {/* {(loading || regularSpeakers.length > 0) && (
+        <div className="py-5">
+          <div className="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+            <h2 className="h4 fw-bold text-dark mb-0" style={{ maxWidth: "800px" }}>
+              {locale === "cn" ? "演讲者" : "AIM Congress - China Chapter 2025 Speakers"}
             </h2>
             <ButtonComponent name="View all Speakers" link="/speakers-2025" />
           </div>
-
-          <div className="row mt-4 slider-with-gradients position-relative">
-            {loading ? (
-              renderPlaceholder()
-            ) : (
-              <Swiper {...swiperSettings}>
-                {regularSpeakers.slice(0, 20).map((item) => (
-                  <SwiperSlide key={item.ItemID}>
-                    {renderSpeakerCard(item)}
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            )}
+          <div className="position-relative">
+            {loading ? <SkeletonSwiper /> : <SpeakerSwiper speakers={regularSpeakers} />}
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 }

@@ -90,7 +90,10 @@ export default function StatsSection({
           {/* Heading + content row */}
           <div className="row g-4 mb-5">
             <div className="col-12 col-sm-6">
-              <h2 className="fs-2 fw-normal text-black" style={{ maxWidth: "22rem" }}>
+              <h2
+                className="fs-2 fw-normal text-black"
+                style={{ maxWidth: "22rem" }}
+              >
                 {statsheading}
               </h2>
             </div>
@@ -99,12 +102,14 @@ export default function StatsSection({
                 className="text-muted mb-3"
                 dangerouslySetInnerHTML={{ __html: statscontent }}
               />
-              <a
-                href={downloadreportlink}
-                className="btn btn-dark rounded-pill px-4"
-              >
-                {downloadreportname || "Download 2025 PSR"}
-              </a>
+              {downloadreportlink && (
+                <a
+                  href={downloadreportlink}
+                  className="btn btn-dark rounded-pill px-4"
+                >
+                  {downloadreportname}
+                </a>
+              )}
             </div>
           </div>
 
@@ -125,9 +130,7 @@ export default function StatsSection({
 
               return (
                 <div key={item.system.id} className="col">
-                  <p className="text-muted small mb-1">
-                    {item.name.value}
-                  </p>
+                  <p className="text-muted small mb-1">{item.name.value}</p>
                   <div
                     className="fw-semibold"
                     style={{

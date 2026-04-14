@@ -57,7 +57,7 @@ function Page({ pageData }: any) {
 
           <h2
             className="mt-2 text-primary section-heading-2026"
-            style={{ maxWidth: "1000px" }}
+            style={{ maxWidth: "1200px" }}
           >
             {pageData.themeheading.value}
           </h2>
