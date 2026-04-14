@@ -1,0 +1,104 @@
+.aim-talks-page {
+  .objective-item {
+    padding: 1.25rem 1.5rem;
+    border-right: 0.5px solid #dee2e6;
+    border-bottom: 0.5px solid #dee2e6;
+  }
+
+  /* Remove right border on last column */
+  .objective-item:nth-child(3n) {
+    border-right: none;
+  }
+
+  /* Remove bottom border on last row */
+  .objective-item:nth-last-child(-n + 3) {
+    border-bottom: none;
+  }
+
+  .sector-item {
+    background: #e8e8e8;
+    border-radius: 12px;
+    padding: 1.25rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .sector-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.18) 55%,
+    rgba(0, 0, 0, 0.04) 100%
+  );
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+  .sector-item:hover::before {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.55) 60%,
+      rgba(0, 0, 0, 0.25) 100%
+    );
+  }
+
+  .sector-label {
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+    transition:
+      opacity 0.25s,
+      transform 0.25s;
+  }
+
+  .sector-hover-content {
+    position: absolute;
+    inset: 0;
+    padding: 1.25rem;
+    background: #000000;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition:
+      opacity 0.25s,
+      transform 0.25s;
+    z-index: 3;
+  }
+
+  .sector-item:hover .sector-hover-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .sector-item:hover .sector-label {
+    opacity: 0;
+  }
+
+  .sector-hover-content h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .sector-hover-content p,
+  .sector-hover-content div {
+    font-size: 13px;
+    color: #e1e1e1;
+    line-height: 1.6;
+    margin: 0;
+  }
+}

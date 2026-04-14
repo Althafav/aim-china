@@ -27,11 +27,11 @@ const ThemeSectionComponent: React.FC<PageDataProps> = ({ pageData }) => {
       <div className="container">
         <div className="row g-5">
           <div className="col-12">
-            {/* <div className="mb-4">
+            <div className="mb-4">
               <span className="bg-primary px-4 py-2 text-white">
-                2026 Theme
+               {pageData.themetag.value}
               </span>
-            </div> */}
+            </div>
             <div className="sub-head">
               <motion.span
                 className="main-head"
@@ -100,7 +100,7 @@ const ThemeSectionComponent: React.FC<PageDataProps> = ({ pageData }) => {
             </div>
           </div>
 
-          <div className="col-12 ">
+          {/* <div className="col-12 ">
             <div className="theme-cta-wrapper">
               <motion.p
                 className="cta-heading mb-4 mb-lg-0"
@@ -120,7 +120,7 @@ const ThemeSectionComponent: React.FC<PageDataProps> = ({ pageData }) => {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -24,22 +24,22 @@ const HomeSPETabs = dynamic(() => import("@/components/Home/HomeSPETabs"), {
 });
 const HomeSponsorsComponent = dynamic(
   () => import("@/components/Home/HomeSponsorsComponent"),
-  { ssr: false, loading: () => <SpinnerComponent /> }
+  { ssr: false, loading: () => <SpinnerComponent /> },
 );
 
 // You can also consider deferring ThemeSection and Articles if they’re heavy:
 const ThemeSectionComponent = dynamic(
   () => import("@/components/Home/ThemeSectionComponent"),
-  { loading: () => <SpinnerComponent />, ssr: false }
+  { loading: () => <SpinnerComponent />, ssr: false },
 );
 const ArticlesComponent = dynamic(
   () => import("@/components/Home/ArticlesComponent"),
-  { loading: () => <SpinnerComponent />, ssr: false }
+  { loading: () => <SpinnerComponent />, ssr: false },
 );
 
 const FeaturesSwiper = dynamic(
   () => import("@/components/pillar/FeaturesSwiper"),
-  { ssr: false, loading: () => <SpinnerComponent /> }
+  { ssr: false, loading: () => <SpinnerComponent /> },
 );
 
 function Home({ pageData }: { pageData: any }) {
@@ -93,15 +93,6 @@ function Home({ pageData }: { pageData: any }) {
       <BannerComponent pageData={pageData} />
 
       <ThemeSectionComponent pageData={pageData} />
-      <PillarSection pageData={pageData} />
-
-      <div>
-        <HomeSponsorsComponent/>
-      </div>
-
-      <div className="container">
-        <HomeSpeakersComponentCurrent />
-      </div>
 
       <div className="aim-china-section py-5">
         <div className="container">
@@ -144,7 +135,54 @@ function Home({ pageData }: { pageData: any }) {
         </div>
       </div>
 
-      <TargetCTA items={pageData.targetaudientsitems.value} />
+      <div className=" py-5">
+        <div className="container">
+          <div className="row ">
+            <h2
+              className="section-heading-2026 text-black text-start"
+              style={{ maxWidth: "800px" }}
+            >
+              {pageData.aimtalkheading.value}
+            </h2>
+            <p>{pageData.aimtalksubheading.value}</p>
+
+            <div>
+              <div
+                className="p-5 mt-4 rounded-3xl"
+                style={{ backgroundColor: "#DCF2FF" }}
+              >
+                <span className="bg-secondary text-white small px-4 py-1">
+                  {pageData.aimtalkthemetag.value}
+                </span>
+                <div className="mt-4">
+                  <div className="d-flex flex-wrap">
+                    <h2
+                      className="mt-2 text-primary section-heading-2026"
+                      style={{ maxWidth: "1000px" }}
+                    >
+                      {pageData.aimtalkthemeheading.value}
+                    </h2>
+
+                    <div>
+                      <img
+                        src={pageData.aimtalkpartnerlogo.value[0]?.url}
+                        alt=""
+                        style={{ width: "150px" }}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="text-primary mt-3"
+                    dangerouslySetInnerHTML={{
+                      __html: pageData.aimtalkthemecontent.value,
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="container py-5">
         <div className="row">
@@ -154,6 +192,17 @@ function Home({ pageData }: { pageData: any }) {
           />
         </div>
       </div>
+      <PillarSection pageData={pageData} />
+
+      <div>
+        <HomeSponsorsComponent />
+      </div>
+
+      <div className="container">
+        <HomeSpeakersComponentCurrent />
+      </div>
+
+      <TargetCTA items={pageData.targetaudientsitems.value} />
 
       {/* <HomeSponsorsComponent />
       <HomeSPETabs /> */}
@@ -169,7 +218,7 @@ function Home({ pageData }: { pageData: any }) {
       /> */}
       {/* <YoutubeSectionComponent pageData={pageData} /> */}
 
-      {pageData.hostcityheading.value && (
+      {/* {pageData.hostcityheading.value && (
         <div className="section py-5">
           <div className="container">
             <div className="row g-5">
@@ -210,7 +259,7 @@ function Home({ pageData }: { pageData: any }) {
             </div>
           </div>
         </div>
-      )}
+      )} */}
       {pageData.ctablock.value &&
         pageData.ctablock.value.map((item: any, index: number) => {
           return (
@@ -231,7 +280,7 @@ export async function getStaticProps(context: any) {
   const { locale } = context;
   const languageCode = locale === "cn" ? "China" : "default";
   const datasourceStr = await Globals.KontentClient.item(
-    "home_page___aim_china_2025"
+    "home_page___aim_china_2025",
   )
     .languageParameter(languageCode)
     .toObservable()
@@ -242,7 +291,7 @@ export async function getStaticProps(context: any) {
     props: {
       pageData: JSON.parse(datasourceStr) as Homepage2026,
     },
-    revalidate: 60,
+    revalidate: 30,
   };
 }
 
