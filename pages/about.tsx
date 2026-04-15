@@ -18,6 +18,41 @@ export default function About({ pageData }: { pageData: Aim2026page }) {
     return <SpinnerComponent />;
   }
 
+  const sections = [
+    {
+      heading: pageData.aimtalkheading.value,
+      content: pageData.aimtalkcontent.value,
+      ctaLink: pageData.aimtalkctalink.value,
+      ctaName: pageData.aimtalkctaname.value,
+      image: pageData.aimtalkimage.value[0]?.url,
+      imageLeft: false,
+    },
+    {
+      heading: pageData.aimchapterheading.value,
+      content: pageData.aimchaptercontent.value,
+      ctaLink: pageData.aimchapterctalink.value,
+      ctaName: pageData.aimchapterctaname.value,
+      image: pageData.aimchapterimage.value[0]?.url,
+      imageLeft: true,
+    },
+    {
+      heading: pageData.agfheading.value,
+      content: pageData.agfcontent.value,
+      ctaLink: pageData.agfwebsitelink.value,
+      ctaName: pageData.agfctaname.value,
+      image: pageData.agfimage.value[0]?.url,
+      imageLeft: false,
+    },
+    {
+      heading: pageData.aimheading.value,
+      content: pageData.aimcontent.value,
+      ctaLink: pageData.aimwebsitelink.value,
+      ctaName: pageData.aimctaname.value,
+      image: pageData.aimaboutimage.value[0]?.url,
+      imageLeft: true,
+    },
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -70,7 +105,8 @@ export default function About({ pageData }: { pageData: Aim2026page }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className="black-replacer-nav"></div>
-      <div className="banner-wrapper">
+      <div className="banner-wrapper" style={{ position: "relative" }}>
+        {/* Video */}
         <video
           width="100%"
           autoPlay
@@ -80,26 +116,43 @@ export default function About({ pageData }: { pageData: Aim2026page }) {
           muted
           controls={false}
           preload="auto"
+          style={{ display: "block" }}
         >
-          <source
-            src={pageData.bannervideolink.value}
-            type="video/mp4"
-            className="banner-video"
-            width="100%"
-          />
+          <source src={pageData.bannervideolink.value} type="video/mp4" />
         </video>
 
-        <div className=" container">
-          <div className="row justify-content-center">
+        {/* Black Overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.5)", // adjust opacity as needed
+            zIndex: 1,
+          }}
+        />
+
+        {/* Content */}
+        <div
+          className="container"
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 2,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <div className="row justify-content-center w-100">
             <div className="col-lg-10">
               <h1 className="banner-heading">{pageData.bannerheading.value}</h1>
-              <h4 className="">{pageData.bannersubheading.value}</h4>
+              <h4>{pageData.bannersubheading.value}</h4>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="py-5">
+      {
+        /* <div className="py-5">
         <div className="container">
           <div className="row g-3">
             <div className="col-lg-6">
@@ -178,102 +231,84 @@ export default function About({ pageData }: { pageData: Aim2026page }) {
                 <div
                   className="content-wrapper"
                   dangerouslySetInnerHTML={{
-                    __html: pageData.aimtalkcontent.value,
+                    __html: pageData.aimchaptercontent.value,
                   }}
                 />
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="py-5">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-10">
-              <div className={`row g-5 align-items-start mb-5 `}>
-                {/* Text Column */}
-                <div className="col-md-6 mb-3 mb-md-0">
-                  <h2 className="h3 mb-3 text-black">
-                    {pageData.agfheading.value}
-                  </h2>
-                  <div
-                    className="text-muted content-wrapper"
-                    dangerouslySetInnerHTML={{
-                      __html: pageData.agfcontent.value,
-                    }}
-                  />
+      </div> */
 
-                  {pageData.agfwebsitelink.value && (
-                    <div className="mt-4">
-                      <Link
-                        href={pageData.agfwebsitelink.value}
-                        className="px-3 py-2 text-white bg-dark rounded-pill"
-                        target="_blank"
-                      >
-                        <span>
-                          {pageData.agfctaname.value}{" "}
-                          <GoArrowUpRight size={28} />
-                        </span>
-                      </Link>
+        <div className="py-5">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-10">
+                {sections.map((section, index) => (
+                  <div key={index}>
+                    {/* Section Row */}
+                    <div className="row g-5 align-items-center mb-5">
+                      {/* Image — left side if imageLeft, else right */}
+                      {section.imageLeft && (
+                        <div className="col-md-6">
+                          <img
+                            src={section.image}
+                            alt=""
+                            className="img-fluid rounded-3xl w-100"
+                            style={{ objectFit: "cover", height: "300px" }}
+                          />
+                        </div>
+                      )}
+
+                      {/* Text Column */}
+                      <div className="col-md-6 mb-3 mb-md-0">
+                        <h2 className="h3 mb-3 text-black">
+                          {section.heading}
+                        </h2>
+                        <div
+                          className="text-muted content-wrapper"
+                          dangerouslySetInnerHTML={{ __html: section.content }}
+                        />
+                        {section.ctaLink && (
+                          <div className="mt-4">
+                            <Link
+                              href={section.ctaLink}
+                              className="px-3 py-2 text-white bg-dark rounded-pill"
+                              target="_blank"
+                            >
+                              <span>
+                                {section.ctaName} <GoArrowUpRight size={28} />
+                              </span>
+                            </Link>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Image — right side */}
+                      {!section.imageLeft && (
+                        <div className="col-md-6">
+                          <img
+                            src={section.image}
+                            alt=""
+                            className="img-fluid rounded-3xl w-100"
+                            style={{ objectFit: "cover", height: "300px" }}
+                          />
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
 
-                {/* Image Column */}
-                <div className="col-md-6">
-                  <img
-                    src={pageData.agfimage.value[0]?.url}
-                    alt=""
-                    className="img-fluid rounded-3xl"
-                    style={{ objectFit: "cover", height: "300px" }}
-                  />
-                </div>
-              </div>
-
-              <div className={`row g-5 align-items-start mb-5 `}>
-                {/* Text Column */}
-
-                {/* Image Column */}
-                <div className="col-md-6">
-                  <img
-                    src={pageData.aimaboutimage.value[0]?.url}
-                    alt=""
-                    className="img-fluid rounded-3xl"
-                    style={{ objectFit: "cover", height: "300px" }}
-                  />
-                </div>
-
-                <div className="col-md-6 mb-3 mb-md-0">
-                  <h2 className="h3 mb-3 text-black">
-                    {pageData.aimheading.value}
-                  </h2>
-                  <div
-                    className="text-muted content-wrapper"
-                    dangerouslySetInnerHTML={{
-                      __html: pageData.aimcontent.value,
-                    }}
-                  />
-
-                  {pageData.aimwebsitelink.value && (
-                    <div className="mt-4">
-                      <Link
-                        href={pageData.aimwebsitelink.value}
-                        className="px-3 py-2 text-white bg-dark rounded-pill"
-                        target="_blank"
-                      >
-                        <span>
-                          {pageData.aimctaname.value}{" "}
-                          <GoArrowUpRight size={28} />
-                        </span>
-                      </Link>
-                    </div>
-                  )}
-                </div>
+                    {/* Divider between sections (not after the last one) */}
+                    {index < sections.length - 1 && (
+                      <hr className="my-4 border-top border-2 border-light-subtle" />
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </div>
+      }
+
       {/* <div className="py-5">
         <div className="container text-content">
           <div className="row justify-content-center">

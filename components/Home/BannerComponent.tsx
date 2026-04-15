@@ -91,7 +91,6 @@ const BannerComponent: React.FC<PageDataProps> = ({ pageData }) => {
                         {item.ctalink.value && (
                           <Link
                             href={item.ctalink.value}
-                            target="_blank"
                             className="d-flex align-items-center gap-2 mt-3"
                           >
                             <p className="text-white small mb-0">
