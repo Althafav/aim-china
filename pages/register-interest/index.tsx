@@ -41,16 +41,16 @@ export default function RegisterPage({
   const handleCheck = (
     checkboxId: string,
     yesFieldId: string,
-    noFieldId: string
+    noFieldId: string,
   ) => {
     const checkbox = document.getElementById(
-      checkboxId
+      checkboxId,
     ) as HTMLInputElement | null;
     const yesInput = document.getElementById(
-      yesFieldId
+      yesFieldId,
     ) as HTMLInputElement | null;
     const noInput = document.getElementById(
-      noFieldId
+      noFieldId,
     ) as HTMLInputElement | null;
     if (!checkbox || !yesInput || !noInput) {
       console.warn("Missing checkbox or hidden input fields.");
@@ -80,7 +80,7 @@ export default function RegisterPage({
       options.forEach((label, index) => {
         if (label.toLowerCase() === formatted) {
           const checkbox = document.getElementById(
-            `field_228_${index}`
+            `field_228_${index}`,
           ) as HTMLInputElement;
           if (checkbox) checkbox.checked = true;
         }
@@ -270,7 +270,7 @@ export default function RegisterPage({
                                     {country.label}
                                   </option>
                                 );
-                              }
+                              },
                             )}
                           </select>
                         </div>
@@ -294,7 +294,7 @@ export default function RegisterPage({
                                     {country.label}
                                   </option>
                                 );
-                              }
+                              },
                             )}
                           </select>
                         </div>
@@ -326,6 +326,22 @@ export default function RegisterPage({
                           </label>
 
                           <div className={`"d-flex flex-wrap gap-3"`}>
+                            <div className="form-check form-check-inline custom-checkbox-box">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                name="field[228][]"
+                                id={`field_228_Exhibitor`}
+                                value="Exhibitor"
+                                defaultChecked={attendAs === "Exhibitor"}
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor={`field_228_Exhibitor`}
+                              >
+                                Exhibitor
+                              </label>
+                            </div>
                             <div className="form-check form-check-inline custom-checkbox-box">
                               <input
                                 className="form-check-input"
@@ -425,7 +441,7 @@ export default function RegisterPage({
                               handleCheck(
                                 "brochure",
                                 "field_229Yes",
-                                "field_229No"
+                                "field_229No",
                               )
                             }
                           />
@@ -440,7 +456,7 @@ export default function RegisterPage({
                               handleCheck(
                                 "newsletter",
                                 "field_231Yes",
-                                "field_231No"
+                                "field_231No",
                               )
                             }
                           />
@@ -495,7 +511,7 @@ export async function getServerSideProps(context: any) {
   ]);
 
   const datasourceStr: string = await Globals.KontentClient.item(
-    "form___register_interest___aim_china"
+    "form___register_interest___aim_china",
   )
     .languageParameter(languageCode)
     .withParameter("depth", "4")
