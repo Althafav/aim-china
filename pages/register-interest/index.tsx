@@ -96,7 +96,7 @@ export default function RegisterPage({
     <div className="form-2026">
       <div className="container">
         <div className="register-interest-form-wrapper-2026 ">
-          <div className="form-banner-wrapper aspect-ratio-box px-5">
+          {/* <div className="form-banner-wrapper aspect-ratio-box px-5">
             <motion.img
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -124,6 +124,38 @@ export default function RegisterPage({
                   {" "}
                   {pageData.date.value}
                 </p>
+              </div>
+            </div>
+          </div> */}
+
+          <div
+            className="position-relative py-5 text-dark overflow-hidden"
+            style={{
+              backgroundColor: "#fff",
+              color: "#0A1E2D",
+              backgroundImage: `url('/assets/pattern/aim-pattern-left.svg'), url('/assets/pattern/aim-pattern-right.svg')`,
+              backgroundRepeat: "no-repeat, no-repeat",
+              backgroundPosition: "left center, right top",
+              backgroundSize: "480px 360px, 680px 360px",
+            }}
+          >
+            <div className="py-4 px-5">
+              <div className="mb-3">
+                <a href={pageData.aimlogolink.value ?? "#"}>
+                  <img style={{ width: "7rem" }} src={pageData.aimlogo.value[0]?.url} alt="" />
+                </a>
+              </div>
+              <h1
+                className="mb-3 fw-medium lh-sm text-black"
+                style={{
+                  fontSize: "clamp(1.875rem, 4vw, 2.25rem)",
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                  {pageData.bannerheading.value}
+              </h1>
+              <div>
+                <p className="d-inline-block text-secondary mb-0">{pageData.date.value}</p>
               </div>
             </div>
           </div>
