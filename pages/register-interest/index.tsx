@@ -510,9 +510,20 @@ export async function getServerSideProps(context: any) {
     GenericData.countries(),
   ]);
 
-  const datasourceStr: string = await Globals.KontentClient.item(
-    "form___register_interest___aim_china",
-  )
+  let codename = "form___register_interest___aim_china_chapter";
+
+  if (attendAs.toLowerCase() === "exhibitor") {
+    codename = "form___register_interest___aim_china_chapter_exhibitor";
+  } else if (attendAs.toLowerCase() === "sponsor") {
+    codename = "form___register_interest___aim_talk_sponsor";
+  } else if (attendAs.toLowerCase() === "speaker") {
+    codename = "form___register_interest___aim_talk_speaker";
+  } else if (attendAs.toLowerCase() === "media partner") {
+    codename = "form___register_interest___aim_talk_media_partner";
+  } else if (attendAs.toLowerCase() === "supporting partner") {
+    codename = "form___register_interest___aim_talk_media_partner";
+  }
+  const datasourceStr: string = await Globals.KontentClient.item(codename)
     .languageParameter(languageCode)
     .withParameter("depth", "4")
     .toObservable()
