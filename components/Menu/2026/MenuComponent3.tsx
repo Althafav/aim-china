@@ -137,7 +137,7 @@ export default function MenuComponent3() {
           <div className="col-12 top-items-container">
             <div className=" row justify-content-between align-items-center py-1">
               <div className="col-lg-8 d-flex align-items-center gap-5 justify-content-between justify-content-lg-start">
-                <div className="d-flex gap-3 align-items-end">
+                <div className="d-flex gap-3 align-items-center">
                   <Link href="/" className="logo-wrapper">
                     <img
                       src="/assets/imgs/AIM-logo.png"
@@ -146,11 +146,22 @@ export default function MenuComponent3() {
                     />
                   </Link>
                   <div className="logo-wrapper">
-                    <img
-                      src="https://media.aimcongress.com/documents/moft.png"
-                      alt="Logo"
-                      className="menu-logo white-logo aim-logo p-1"
-                    />
+                    {pageData.ministrylogos?.value
+                      ?.slice(0, 1)
+                      .map((item: any) => (
+                        <Link
+                        href={item.link.value || "#"}
+                          key={item.system.id}
+                          className=""
+                          title={item?.name?.value}
+                        >
+                          <img
+                            src={item?.image?.value?.[0]?.url}
+                            alt={item?.image?.value?.[0]?.name}
+                            className="menu-logo white-logo aim-logo p-1"
+                          />
+                        </Link>
+                      ))}
                   </div>
                 </div>
 
@@ -326,13 +337,13 @@ export default function MenuComponent3() {
                                                   </Link>
                                                 </div>
                                               );
-                                            }
+                                            },
                                           )}
                                         </div>
                                       )}
                                     </div>
                                   );
-                                }
+                                },
                               )}
                             </div>
                           )}
@@ -438,13 +449,13 @@ export default function MenuComponent3() {
                                                   </Link>
                                                 </div>
                                               );
-                                            }
+                                            },
                                           )}
                                         </div>
                                       )}
                                     </div>
                                   );
-                                }
+                                },
                               )}
                             </div>
                           )}
@@ -485,7 +496,7 @@ export default function MenuComponent3() {
               );
             })}
 
-            <div className="d-flex">
+            {/* <div className="d-flex">
               {locales!.map((loc) => (
                 <button
                   key={loc}
@@ -497,7 +508,7 @@ export default function MenuComponent3() {
                   {loc === "en" ? "En" : "中文"}
                 </button>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -681,7 +692,7 @@ export default function MenuComponent3() {
                                             )}
                                           </li>
                                         );
-                                      }
+                                      },
                                     )}
                                   </ul>
                                 )}

@@ -194,13 +194,14 @@ function Home({ pageData }: { pageData: any }) {
         </div>
       </div>
 
+      <PillarSection pageData={pageData} />
+      <TargetCTA items={pageData.targetaudientsitems.value} />
       <StatsSection
         statsheading={pageData.statsheading.value}
         statscontent={pageData.statscontent.value}
         statsitems={pageData.statsitems.value}
         downloadreportlink={pageData.downloadreportlink.value}
       />
-      <PillarSection pageData={pageData} />
 
       <div>
         <HomeSponsorsComponent />
@@ -209,8 +210,6 @@ function Home({ pageData }: { pageData: any }) {
       <div className="container">
         <HomeSpeakersComponentCurrent />
       </div>
-
-      <TargetCTA items={pageData.targetaudientsitems.value} />
 
       {/* <HomeSponsorsComponent />
       <HomeSPETabs /> */}

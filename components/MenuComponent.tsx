@@ -177,6 +177,7 @@ export default function MenuComponent() {
               </div>
               <div className="d-flex gap-5 align-items-center  top-items">
                 <div className='top-item pt-3'>
+                  
                   <img src="/assets/imgs/Ministry logos.png" alt="aimcongress 2025" className='ministry-logo' />
                 </div>
                 {/* <div className='top-item'><span style={{ textDecoration: "underline" }}>LOGIN</span></div> */}
